@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block Body %}
+ <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+           <button type="submit" class="btn btn-outline-dark">Login</button>
+ </form>
+{% endblock %}
+</body>
+</html>

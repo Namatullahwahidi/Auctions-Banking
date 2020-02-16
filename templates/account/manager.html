@@ -1,0 +1,135 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block MainContent %}
+
+
+    <h1>Manager blocks</h1>
+{#      <a href="{{ path('newstudentform') }}" class="btn btn-primary" role="button">Insert New Drink</a>#}
+    {% if clients %}
+        <table class="table table-hover table-bordered table-striped mb-0">
+            <thead class="bg-success">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Message</th>
+                <th scope="col">Date</th>
+                <th scope="col">show</th>
+            </tr>
+            </thead>
+            <tbody class="tb-info">
+            {% for client in clients %}
+                            <tr>
+                                <td>{{ client.id }}</td>
+                                <td>{{ client.name }}</td>
+                                <td>{{ client.phone }}</td>
+                                <td>{{ client.message  }}</td>
+                                <td>{{ client.created_date  }}</td>
+                                <td>
+                                    <a href="{%  url 'managers:delete_client' client.id %}"
+                                       class="btn btn-danger" role="button">Del</a>
+                                    <a href="{%  url 'managers:apply_client' client.id %}"
+                                       class="btn btn-danger" role="button">Update</a>
+                                </td>
+
+                            </tr>
+
+            {% endfor %}
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li style="color: red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+
+            </tbody>
+        </table>
+   {% endif %}
+
+    {% if banks %}
+        {% for bank in banks %}
+            <div class="row">
+                <div class="col-md-4">
+                        <div class="container border-bottom  border-dark">
+                                <p>Title __________{{ bank.title}}</p>
+                                 <p>Inn ___________{{ bank.inn}}</p>
+                                 <p>Okpo ___________{{ bank.okpo}}</p>
+                                 <p>L_addr__________  {{ bank.L_addr}}</p>
+                                 <p>L_addr1_________  {{ bank.L_addr1}}</p>
+                                 <p>R_person________  {{ bank.R_person}}</p>
+                                 <p>B_contact_______  {{ bank.B_contact}}</p>
+                                 <p>S_contact_______  {{ bank.S_contact}}</p>
+                                 <p>currentBalance___  {{ bank.currentBalance}}</p>
+                          </div>
+              </div>
+              <div class="col-md-4">
+                 {% for file in files %}
+                    {% if file.feed == bank%}
+                        <img src="{{file.documents.url}}" alt="">
+                     {% endif %}
+                 {% endfor %}
+
+              </div>
+
+
+         
+            </div>
+
+        {% endfor %}
+    {% endif %}
+
+
+
+    {% if applied_clients %}
+        <table class="table table-hover table-bordered table-striped mb-0">
+            <thead class="bg-success">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">credit_history</th>
+                <th scope="col">finan_perfor</th>
+                <th scope="col">dealTime</th>
+                <th scope="col">credit_amount</th>
+                <th scope="col">show</th>
+
+            </tr>
+            </thead>
+            <tbody class="tb-info">
+            {% for client in applied_clients %}
+                            <tr>
+                                <td>{{ client.id }}</td>
+                                <td>{{ client.client.name }}</td>
+                                <td>{{ client.credit_history }}</td>
+                                <td>{{ client.finan_perfor  }}</td>
+                                <td>{{ client.dealTime  }}</td>
+                                <td>{{ client.credit_amount  }}</td>
+                                <td>
+{#                                    <a href="{%  url 'managers:delete_client' client.id %}"#}
+{#                                       class="btn btn-danger" role="button">Del</a>#}
+{#                                    <a href="{%  url 'managers:apply_client' client.id %}"#}
+{#                                       class="btn btn-danger" role="button">Update</a>#}
+                                </td>
+
+                            </tr>
+
+            {% endfor %}
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li style="color: red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+
+            </tbody>
+        </table>
+   {% endif %}
+
+
+{% endblock %}
+

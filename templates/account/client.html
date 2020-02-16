@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block Body %}
+    <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+           <button type="submit" class="btn btn-outline-dark">Login</button>
+    </form>
+
+
+{% if client %}
+
+    <h5> {{ client.name }} </h5>
+    <h5> {{ client.phone }} </h5>
+    <h5> {{ client.message}} </h5>
+
+{% endif %}
+{% endblock %}
+</body>
+</html>
