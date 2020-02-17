@@ -7,13 +7,18 @@
 <body>
    <div >
 
-        <ul>
+            <ul>
+                Clients
+                <li><a href="{% url 'clients:client' %}"> Sign up</a></li>
+                <li><a href="#"> Login</a></li>
 
-            <a href="{% url 'managers:client' %}"> Client</a>
-            <a href="{% url 'managers:login' %}">Login</a>
-
-
-        </ul>
+             </ul>
+              <ul>
+                  Admin
+               <li>
+                   <a href="{% url 'managers:login' %}">Login</a>
+               </li>
+             </ul>
    </div>
 {% block Body %}
 {% endblock %}

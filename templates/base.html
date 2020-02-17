@@ -71,7 +71,7 @@
                                                 <ul class="top-nav">
 
                                                     <li>
-                                                        <a href="{% url 'managers:client' %}"><i class="fas fa-user-edit mr-2"></i>Client</a>
+                                                        <a href="{% url 'clients:client' %}"><i class="fas fa-user-edit mr-2"></i>Client</a>
                                                     </li>
                                                     <li>
                                                         <a href="{% url 'managers:login' %}"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
@@ -83,6 +83,9 @@
                         {% endif %}
                 <!-- Top Nav -->
                 {% endblock %}
+
+
+
                 {% block Header %}
                 <!-- Header -->
                 <div class="col-12 bg-white pt-4">
@@ -104,23 +107,63 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-lg-auto text-center text-lg-left header-item-holder">
-                            <a href="{% url 'managers:bank' %}" class="header-item">
-                                <i class="fas fa-plus mr-2"></i><span id="header-favorite">Bank</span>
-                            </a>
-                            <a href="{% url 'managers:get_bank' %}" class="header-item">
-                                <i class="fas fa-eye mr-2"></i><span id="header-qty" class="mr-3">Banks</span>
-                            </a>
-                            <a href="{% url 'managers:get_client' %}" class="header-item">
-                                <i class="fas fa-eye mr-2"></i><span id="header-qty" class="mr-3">Clients</span>
-                            </a>
-                             <a href="{% url 'managers:list_applied_clients' %}" class="header-item">
-                                <i class="fas fa-eye mr-2"></i><span id="header-qty" class="mr-3">Applied Clients</span>
-                            </a>
-
-                        </div>
+                         
                     </div>
+                    {% endblock %}
                     <!-- Nav -->
+                    {% block Nav %}
+                          <div class="row">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-white col-12">
+                                <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="mainNav">
+                                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="{% url 'managers:manager' %}">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="electronics" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Banks</a>
+                                            <div class="dropdown-menu" aria-labelledby="electronics">
+                                                <a class="dropdown-item" href="{% url 'managers:bank' %}">
+                                                    <i class="fas fa-plus mr-2"></i>
+                                                    <span id="header-qty" class="mr-3">Add Bank</span>
+                                                </a>
+                                                 <a class="dropdown-item" href="{% url 'managers:get_bank' %}">
+                                                    <i class="fas fa-eye mr-2"></i>
+                                                    <span id="header-qty" class="mr-3">Show Bank</span>
+                                                </a>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="fashion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clients</a>
+                                            <div class="dropdown-menu" aria-labelledby="fashion">
+                                                 <a class="dropdown-item" href="{% url 'clients:get_client' %}">
+                                                    <i class="fas fa-eye mr-2"></i>
+                                                    <span id="header-qty" class="mr-3">Show Clients</span>
+                                                 </a>
+                                                 <a class="dropdown-item" href="{% url 'clients:list_applied_clients' %}">
+                                                    <i class="fas fa-eye mr-2"></i>
+                                                    <span id="header-qty" class="mr-3">Show Applied Clients</span>
+                                                 </a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="books" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Books</a>
+                                            <div class="dropdown-menu" aria-labelledby="books">
+                                                <a class="dropdown-item" href="#">Adventure</a>
+                                                <a class="dropdown-item" href="#">Horror</a>
+                                                <a class="dropdown-item" href="#">Romantic</a>
+                                                <a class="dropdown-item" href="#">Children's</a>
+                                                <a class="dropdown-item" href="#">Non-Fiction</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+
 
                     <!-- Nav -->
 
@@ -131,17 +174,12 @@
         </div>
 
 
-        <div class="col-12">
-            <!-- Main Content -->
-            {% block MainContent %}
+                    <!-- Main Content -->
+                {% block MainContent %}
 
-            <!-- Main Content -->
-            {% endblock %}
-        </div>
+                <!-- Main Content -->
+                {% endblock %}
 
-
-
-</div>
 
 <script type="text/javascript" src="{%  static 'js/jquery.min.js'%}"></script>
 <script type="text/javascript" src="{%  static 'js/bootstrap.min.js'%}'"></script>

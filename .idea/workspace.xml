@@ -2,16 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0002_client_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0003_auto_20200217_1144.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0010_auto_20200217_1049.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clients/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auction/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auction/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/account/apply_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/apply_client.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/account/bank.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/bank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/sign_up.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/account/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +51,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XfVNnxTFnNRLt0ZBYhsjD73aDF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -54,12 +75,13 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/account" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/managers/media" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/clients" />
+      <recent name="$PROJECT_DIR$/templates/account" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.auction">
@@ -130,12 +152,17 @@
       <workItem from="1581768634945" duration="13201000" />
       <workItem from="1581830667555" duration="23003000" />
       <workItem from="1581913357156" duration="6174000" />
-      <workItem from="1581925459487" duration="2201000" />
+      <workItem from="1581925459487" duration="3141000" />
+      <workItem from="1581935161509" duration="1601000" />
+      <workItem from="1581947117202" duration="8825000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="305" y="59" width="800" height="684" key="#Inspections" timestamp="1581841025650">
@@ -150,46 +177,46 @@
       <screen x="54" y="27" width="1312" height="741" />
     </state>
     <state x="493" y="155" width="424" height="491" key="FileChooserDialogImpl/54.27.1312.741@54.27.1312.741" timestamp="1581704494516" />
-    <state width="1266" height="145" key="GridCell.Tab.0.bottom" timestamp="1581624575690">
+    <state width="1266" height="177" key="GridCell.Tab.0.bottom" timestamp="1581956946968">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.0.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581624575690" />
-    <state width="1266" height="145" key="GridCell.Tab.0.center" timestamp="1581624575689">
+    <state width="1266" height="177" key="GridCell.Tab.0.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581956946968" />
+    <state width="1266" height="177" key="GridCell.Tab.0.center" timestamp="1581956946967">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.0.center/54.27.1312.741@54.27.1312.741" timestamp="1581624575689" />
-    <state width="1266" height="145" key="GridCell.Tab.0.left" timestamp="1581624575688">
+    <state width="1266" height="177" key="GridCell.Tab.0.center/54.27.1312.741@54.27.1312.741" timestamp="1581956946967" />
+    <state width="1266" height="177" key="GridCell.Tab.0.left" timestamp="1581956946966">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.0.left/54.27.1312.741@54.27.1312.741" timestamp="1581624575688" />
-    <state width="1266" height="145" key="GridCell.Tab.0.right" timestamp="1581624575689">
+    <state width="1266" height="177" key="GridCell.Tab.0.left/54.27.1312.741@54.27.1312.741" timestamp="1581956946966" />
+    <state width="1266" height="177" key="GridCell.Tab.0.right" timestamp="1581956946967">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.0.right/54.27.1312.741@54.27.1312.741" timestamp="1581624575689" />
-    <state width="1266" height="145" key="GridCell.Tab.1.bottom" timestamp="1581624575692">
+    <state width="1266" height="177" key="GridCell.Tab.0.right/54.27.1312.741@54.27.1312.741" timestamp="1581956946967" />
+    <state width="1266" height="177" key="GridCell.Tab.1.bottom" timestamp="1581956946969">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.1.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581624575692" />
-    <state width="1266" height="145" key="GridCell.Tab.1.center" timestamp="1581624575691">
+    <state width="1266" height="177" key="GridCell.Tab.1.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
+    <state width="1266" height="177" key="GridCell.Tab.1.center" timestamp="1581956946969">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.1.center/54.27.1312.741@54.27.1312.741" timestamp="1581624575691" />
-    <state width="1266" height="145" key="GridCell.Tab.1.left" timestamp="1581624575690">
+    <state width="1266" height="177" key="GridCell.Tab.1.center/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
+    <state width="1266" height="177" key="GridCell.Tab.1.left" timestamp="1581956946968">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.1.left/54.27.1312.741@54.27.1312.741" timestamp="1581624575690" />
-    <state width="1266" height="145" key="GridCell.Tab.1.right" timestamp="1581624575691">
+    <state width="1266" height="177" key="GridCell.Tab.1.left/54.27.1312.741@54.27.1312.741" timestamp="1581956946968" />
+    <state width="1266" height="177" key="GridCell.Tab.1.right" timestamp="1581956946969">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state width="1266" height="145" key="GridCell.Tab.1.right/54.27.1312.741@54.27.1312.741" timestamp="1581624575691" />
+    <state width="1266" height="177" key="GridCell.Tab.1.right/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1581830982475">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741@54.27.1312.741" timestamp="1581830982475" />
-    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1581925475227">
+    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1581947127421">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1581925475227" />
+    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1581947127421" />
     <state x="478" y="317" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581928859429">
       <screen x="54" y="27" width="1312" height="741" />
     </state>

@@ -3,7 +3,6 @@
 {% block MainContent %}
 
 
-    <h1>Manager blocks</h1>
 {#      <a href="{{ path('newstudentform') }}" class="btn btn-primary" role="button">Insert New Drink</a>#}
     {% if clients %}
         <table class="table table-hover table-bordered table-striped mb-0">
@@ -26,9 +25,9 @@
                                 <td>{{ client.message  }}</td>
                                 <td>{{ client.created_date  }}</td>
                                 <td>
-                                    <a href="{%  url 'managers:delete_client' client.id %}"
+                                    <a href="{%  url 'clients:delete_client' client.id %}"
                                        class="btn btn-danger" role="button">Del</a>
-                                    <a href="{%  url 'managers:apply_client' client.id %}"
+                                    <a href="{%  url 'clients:apply_client' client.id %}"
                                        class="btn btn-primary" role="button">Apply</a>
                                 </td>
 

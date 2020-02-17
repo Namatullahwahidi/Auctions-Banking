@@ -9,9 +9,8 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-from managers.forms import ClientRegisterForm, ApplyClientForm
 from managers.forms import BankRegisterForm
-from managers.models import Client, Bank, FeedFile, ApplyClient
+from managers.models import Bank, FeedFile
 
 
 def Home(request):
@@ -24,53 +23,6 @@ def Manager(request):
 
 def logout(request):
     return redirect("/client")
-
-
-class ClientRegister(CreateView):
-    model=Client
-    form_class = ClientRegisterForm
-    template_name = 'account/client.html'
-
-
-class ListClients(ListView):
-    template_name = 'account/manager.html'
-    model = Client
-    context_object_name = 'clients'
-
-
-def delete_client(request, id):
-    article = get_object_or_404(Client, id=id)
-    article.delete()
-    messages.success(request, "Client  was deleted successfully")
-    return redirect("managers:get_client")
-
-
-def apply_client(request, id):
-    client = get_object_or_404(Client, id=id)
-    client_form = ClientRegisterForm(request.POST or None, instance=client)
-    form = ApplyClientForm(request.POST or None,instance=client)
-    print(form.is_valid())
-    if form.is_valid():
-        instance = ApplyClient()
-        instance.client = client
-        instance.dealTime = form.cleaned_data.get('dealTime')
-        instance.credit_purpose = form.cleaned_data.get('credit_purpose')
-        instance.credit_amount = form.cleaned_data.get('credit_amount')
-        instance.collateral = form.cleaned_data.get('collateral')
-        instance.credit_history = form.cleaned_data.get('credit_history')
-        instance.finan_perfor = form.cleaned_data.get('finan_perfor')
-        instance.dealTime = form.cleaned_data.get('dealTime')
-        instance.dealTime = form.cleaned_data.get('dealTime')
-        instance.save()
-
-        return redirect("managers:manager")
-    return render(request, "account/apply_client.html", {"form": form, 'client_form': client_form})
-
-
-class List_AppliedClients(ListView):
-    template_name = 'account/manager.html'
-    model = ApplyClient
-    context_object_name = 'applied_clients'
 
 
 class BankRegister(CreateView):
