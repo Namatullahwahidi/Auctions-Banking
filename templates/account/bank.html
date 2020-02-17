@@ -1,13 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block MainContent %}
- <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-           <button type="submit" class="btn btn-outline-dark">Login</button>
-  </form>
-
-
+ {% crispy form %}
 {% if bank %}
 
     <h5> {{ bank.title}} </h5>

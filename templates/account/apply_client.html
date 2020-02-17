@@ -9,7 +9,30 @@
                <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                             {{ client_form.name }}
-                            {{ form}}
+                             {{ form}}
+
+{#                           <div class="row">#}
+{#                                <div class='col-sm-6'>#}
+{#                                    <div class="form-group">#}
+{#                                        <div class='input-group date' id='datetimepicker1'>#}
+{#                                            <input type='text' class="form-control" >#}
+{#                                             #}
+{#                                            <span class="input-group-addon">#}
+{#                                                <span class="glyphicon glyphicon-calendar"></span>#}
+{#                                            </span>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <script type="text/javascript">#}
+{#                                    $(function () {#}
+{#                                        $('#datetimepicker1').datetimepicker();#}
+{#                                    });#}
+{#                                </script>#}
+{#                            </div>#}
+
+
+
+
 {#                        <div class="form-row">#}
 {#                          <div class="form-group col-md-3 mb-0">#}
 {#                            {{ client_form.name|as_crispy_field }}#}

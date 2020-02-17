@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from managers.forms import ClientRegisterForm, ApplyClientForm
-from managers.forms import bankRegister
+from managers.forms import BankRegisterForm
 from managers.models import Client, Bank, FeedFile, ApplyClient
 
 
@@ -26,18 +26,10 @@ def logout(request):
     return redirect("/client")
 
 
-def ClientRegister(request):
-    form = ClientRegisterForm(request.POST or None)
-    if form.is_valid():
-        new_client = Client()
-        new_client.name = form.cleaned_data.get('name')
-        new_client.phone = form.cleaned_data.get('phone')
-        new_client.message = form.cleaned_data.get('message')
-        new_client.save()
-        context = {'client': new_client}
-        return render(request, 'account/client.html', context)
-    context = {'form': form}
-    return render(request, 'account/client.html', context)
+class ClientRegister(CreateView):
+    model=Client
+    form_class = ClientRegisterForm
+    template_name = 'account/client.html'
 
 
 class ListClients(ListView):
@@ -81,32 +73,36 @@ class List_AppliedClients(ListView):
     context_object_name = 'applied_clients'
 
 
-def BankRegister(request):
-    form = bankRegister(request.POST or None, request.FILES)
-    if form.is_valid():
-        newBank = Bank()
-        newBank.title = form.cleaned_data.get('title')
-        newBank.inn = form.cleaned_data.get('inn')
-        newBank.okpo = form.cleaned_data.get('okpo')
-        newBank.legalAddress = form.cleaned_data.get('legalAddress')
-        newBank.legalAddress1 = form.cleaned_data.get('legalAddress1')
-        newBank.responsPerson = form.cleaned_data.get('responsPerson')
-        newBank.bankContacts = form.cleaned_data.get('bankContacts')
-        newBank.specialistContacts = form.cleaned_data.get('specialistContacts')
-        newBank.currentBalance = form.cleaned_data.get('currentBalance')
-        newBank.save()
-        print(request.FILES.getlist('documents'))
-        for f in request.FILES.getlist('documents'):
-            file_instance = FeedFile(documents=f, feed=newBank)
-            file_instance.save()
-            print("saved ok")
-        print("saved")
-        context = {'bank': newBank}
-        return render(request, 'account/bank.html', context)
+class BankRegister(CreateView):
+    model = Bank
+    form_class = BankRegisterForm
+    template_name = 'account/bank.html'
 
-    context = {'form': form}
-    print("here is")
-    return render(request, 'account/bank.html', context)
+    # form = bankRegister(request.POST or None, request.FILES)
+    # if form.is_valid():
+    #     newBank = Bank()
+    #     newBank.title = form.cleaned_data.get('title')
+    #     newBank.inn = form.cleaned_data.get('inn')
+    #     newBank.okpo = form.cleaned_data.get('okpo')
+    #     newBank.legalAddress = form.cleaned_data.get('legalAddress')
+    #     newBank.legalAddress1 = form.cleaned_data.get('legalAddress1')
+    #     newBank.responsPerson = form.cleaned_data.get('responsPerson')
+    #     newBank.bankContacts = form.cleaned_data.get('bankContacts')
+    #     newBank.specialistContacts = form.cleaned_data.get('specialistContacts')
+    #     newBank.currentBalance = form.cleaned_data.get('currentBalance')
+    #     newBank.save()
+    #     print(request.FILES.getlist('documents'))
+    #     for f in request.FILES.getlist('documents'):
+    #         file_instance = FeedFile(documents=f, feed=newBank)
+    #         file_instance.save()
+    #         print("saved ok")
+    #     print("saved")
+    #     context = {'bank': newBank}
+    #     return render(request, 'account/bank.html', context)
+
+    # context = {'form': form}
+    # print("here is")
+    # return render(request, 'account/bank.html', context)
 
 
 def getBanks(request):

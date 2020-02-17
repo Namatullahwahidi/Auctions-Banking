@@ -17,6 +17,10 @@ class Client(models.Model):
     class Meta:
         ordering = ['-created_date']
 
+    def get_absolute_url(self):
+        return u'/'
+        # return u'/manager/%d' % self.id
+
     def __str__(self):
         return self.name
 
@@ -48,7 +52,10 @@ class Bank(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return u'/get_bank'
+
 
 class FeedFile(models.Model):
     documents = models.FileField(upload_to="media", default='/media/index.jpeg', blank=True)
-    feed = models.ForeignKey(Bank, on_delete=models.CASCADE, related_name='files')
+    feed = models.ForeignKey(Bank, on_delete=models.CASCADE, related_name='documents')

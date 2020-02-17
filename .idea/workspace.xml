@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="" />
+    <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/apply_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/apply_client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/bank.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/bank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/client.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/manager.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +29,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XfVNnxTFnNRLt0ZBYhsjD73aDF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -27,6 +42,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/managers/media" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -113,6 +129,8 @@
       <workItem from="1581702966684" duration="7242000" />
       <workItem from="1581768634945" duration="13201000" />
       <workItem from="1581830667555" duration="23003000" />
+      <workItem from="1581913357156" duration="6174000" />
+      <workItem from="1581925459487" duration="2201000" />
     </task>
     <servers />
   </component>
@@ -168,10 +186,14 @@
       <screen x="54" y="27" width="1312" height="741" />
     </state>
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741@54.27.1312.741" timestamp="1581830982475" />
-    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1581831068749">
+    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1581925475227">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1581831068749" />
+    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1581925475227" />
+    <state x="478" y="317" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581928859429">
+      <screen x="54" y="27" width="1312" height="741" />
+    </state>
+    <state x="478" y="317" width="454" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/54.27.1312.741@54.27.1312.741" timestamp="1581928859429" />
     <state x="162" y="27" width="863" height="741" key="find.popup" timestamp="1581588083266">
       <screen x="54" y="27" width="1312" height="741" />
     </state>

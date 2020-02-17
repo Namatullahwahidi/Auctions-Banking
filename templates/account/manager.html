@@ -29,7 +29,7 @@
                                     <a href="{%  url 'managers:delete_client' client.id %}"
                                        class="btn btn-danger" role="button">Del</a>
                                     <a href="{%  url 'managers:apply_client' client.id %}"
-                                       class="btn btn-danger" role="button">Update</a>
+                                       class="btn btn-primary" role="button">Apply</a>
                                 </td>
 
                             </tr>
@@ -94,7 +94,9 @@
                 <th scope="col">dealTime</th>
                 <th scope="col">credit_amount</th>
                 <th scope="col">show</th>
-
+                 <th scope="col">dealTime</th>
+                <th scope="col">credit_amount</th>
+                <th scope="col">show</th>
             </tr>
             </thead>
             <tbody class="tb-info">
@@ -106,9 +108,12 @@
                                 <td>{{ client.finan_perfor  }}</td>
                                 <td>{{ client.dealTime  }}</td>
                                 <td>{{ client.credit_amount  }}</td>
+                                <td>{{ client.finan_perfor  }}</td>
+                                <td>{{ client.dealTime  }}</td>
+                                <td>{{ client.credit_amount  }}</td>
                                 <td>
-{#                                    <a href="{%  url 'managers:delete_client' client.id %}"#}
-{#                                       class="btn btn-danger" role="button">Del</a>#}
+                                    <a href="#"
+                                       class="btn btn-success" role="button">Share</a>
 {#                                    <a href="{%  url 'managers:apply_client' client.id %}"#}
 {#                                       class="btn btn-danger" role="button">Update</a>#}
                                 </td>
