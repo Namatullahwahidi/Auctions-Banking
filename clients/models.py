@@ -5,8 +5,9 @@ from django.utils import timezone
 class Client(models.Model):
     name = models.CharField(max_length=42)
     phone = models.CharField(max_length=15)
-    email=models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100)
     message = models.TextField()
+    password = models.CharField(max_length=128, default=None, null=True)
     created_date = models.DateTimeField(
         default=timezone.now)
 
@@ -29,6 +30,11 @@ class ApplyClient(models.Model):
     collateral = models.CharField(max_length=200)
     credit_history = models.CharField(max_length=200)
     finan_perfor = models.CharField(max_length=100)
+    created_date = models.DateTimeField(
+        default=timezone.now)
+
+    class Meta:
+        ordering = ['-created_date']
 
     def __str__(self):
-        return self.client
+        return self.client.name

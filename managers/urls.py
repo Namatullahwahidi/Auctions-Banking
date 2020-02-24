@@ -18,8 +18,9 @@ app_name='managers'
 urlpatterns=[
     path('',views.Home,name='home'),
     path('manager/',views.Manager,name='manager'),
-    path('bank/',BankRegister.as_view(model=Bank),name='bank'),
+    path('bank/',views.BankRegister,name='bank'),
     url(r'^get_bank/$', views.getBanks, name='get_bank'),
+    path('shared_client/<int:id>', views.shared_client, name="shared_client"),
     url(r'^login/$', login,{'template_name':'account/login.html'},  name='login'),
     url(r'^logout/$', logout,name='logout'),
 

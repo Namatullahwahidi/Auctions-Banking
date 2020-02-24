@@ -1,0 +1,74 @@
+{% extends 'home.html'%}
+{% block Body %}
+
+   {% if client %}
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li style="color: red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+    <div class="container">
+
+          <div class="row form-group">
+            <div class="col-2"> ID :  </div>
+            <div class="col-10">{{ client.client.id }}</div>
+          </div>
+
+           <div class="row form-group">
+            <div class="col-2"> Name: </div>
+            <div class="col-10">{{ client.client.name }}</div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-2"> Phone: </div>
+            <div class="col-10">{{ client.client.phone}}</div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-2">Email: </div>
+            <div class="col-10">{{ client.client.email }}</div>
+          </div>
+          <div class="row form-group">
+            <div class="col-2">DealTime:</div>
+            <div class="col-10">{{ client.dealTime }}</div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-2">Credit_purpose:</div>
+            <div class="col-10">{{ client.credit_purpose }}</div>
+          </div>
+         <div class="row form-group">
+            <div class="col-2">Credit_amount:</div>
+            <div class="col-10">{{ client.credit_amount }}</div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-2">Collateral:</div>
+            <div class="col-10">{{ client.collateral }}</div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-2"> Credit_history:</div>
+            <div class="col-10">{{ client.credit_history}}</div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-2">Finan_perfor </div>
+            <div class="col-10">{{ client.finan_perfor }}</div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-2"> Message </div>
+            <div class="col-10">{{ client.client.message }}</div>
+          </div>
+
+    </div>
+
+   {% endif %}
+
+
+{% endblock %}

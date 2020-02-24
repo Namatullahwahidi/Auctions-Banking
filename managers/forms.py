@@ -5,15 +5,23 @@ from django.contrib.auth.models import User
 from django.forms import ClearableFileInput
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from managers.models import Bank,Shared_clients
 
 
-from managers.models import Bank
-
+class SharedCleintForm(forms.ModelForm):
+    class Meta:
+        model = Shared_clients
+        fields = [
+            'start_date',
+            'expire_date',
+            'start_rate',
+            'customer_rate'
+        ]
 
 
 class BankRegisterForm(forms.ModelForm):
     documents = forms.FileField(widget=forms.ClearableFileInput(
-        attrs={'id': 'documents', 'required': True,'multiple': True}))
+        attrs={'id': 'documents', 'required': True, 'multiple': True}))
 
     class Meta:
         model = Bank

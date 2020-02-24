@@ -1,0 +1,79 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% block Body %}
+
+               <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            {{ client.name }}
+{#                             {% for i in user %}#}
+{#                                    {{ i.name }}#}
+{#                             {% endfor %}#}
+                            <br>
+                             {{ form}}
+
+{#                           <div class="row">#}
+{#                                <div class='col-sm-6'>#}
+{#                                    <div class="form-group">#}
+{#                                        <div class='input-group date' id='datetimepicker1'>#}
+{#                                            <input type='text' class="form-control" >#}
+{##}
+{#                                            <span class="input-group-addon">#}
+{#                                                <span class="glyphicon glyphicon-calendar"></span>#}
+{#                                            </span>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <script type="text/javascript">#}
+{#                                    $(function () {#}
+{#                                        $('#datetimepicker1').datetimepicker();#}
+{#                                    });#}
+{#                                </script>#}
+{#                            </div>#}
+
+
+
+
+{#                        <div class="form-row">#}
+{#                            {% for i in user %}#}
+{#                          <div class="form-group col-md-3 mb-0">#}
+{#                            Name: {{ i.name }}#}
+{#                          </div>#}
+{#                          <div class="form-group col-md-3 mb-0">#}
+{#                            Phone: {{ i.phone }}#}
+{#                          </div>#}
+{#                            {% endfor %}#}
+{#                          <div class="form-group col-md-3 mb-0">#}
+{#                            {{ form.dealTime|as_crispy_field }}#}
+{#                          </div>#}
+{#                           <div class="form-group col-md-3 mb-0">#}
+{#                            {{ form.dealTime|as_crispy_field }}#}
+{#                          </div>#}
+{#                        </div>#}
+{#                        <div class="form-row">#}
+{#                          <div class="form-group col-md-3 mb-0">#}
+{#                            {{ form.credit_purpose|as_crispy_field }}#}
+{#                          </div>#}
+{#                          <div class="form-group col-md-3 mb-0">#}
+{#                            {{ form.credit_amount|as_crispy_field }}#}
+{#                          </div>#}
+{#                          <div class="form-group col-md-3 mb-0">#}
+{#                            {{ form.collateral|as_crispy_field }}#}
+{#                          </div>#}
+{#                           <div class="form-group col-md-3 mb-0">#}
+{#                            {{ form.credit_history|as_crispy_field }}#}
+{#                          </div>#}
+{#                        </div>#}
+{#                        <div class="form-row">#}
+{#                          <div class="form-group col-md-6 mb-0">#}
+{#                            {{ form.finan_perfor|as_crispy_field }}#}
+{#                          </div>#}
+{#                          <div class="form-group col-md-6 mb-0">#}
+{#                            {{ user.message|as_crispy_field }}#}
+{#                          </div>#}
+{##}
+{#                        </div>#}
+
+                    <button type="submit" class="btn btn-primary">Register</button>
+               </form>
+
+{% endblock %}

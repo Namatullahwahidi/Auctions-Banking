@@ -18,6 +18,7 @@
             </thead>
             <tbody class="tb-info">
             {% for client in clients %}
+                {% if client.password is None%}
                             <tr>
                                 <td>{{ client.id }}</td>
                                 <td>{{ client.name }}</td>
@@ -27,12 +28,12 @@
                                 <td>
                                     <a href="{%  url 'clients:delete_client' client.id %}"
                                        class="btn btn-danger" role="button">Del</a>
-                                    <a href="{%  url 'clients:apply_client' client.id %}"
-                                       class="btn btn-primary" role="button">Apply</a>
+                                    <a href="{%  url 'clients:login_password' client.id %}"
+                                       class="btn btn-primary" role="button">Login password</a>
                                 </td>
 
                             </tr>
-
+            {% endif %}
             {% endfor %}
 
             {% if messages %}
@@ -50,9 +51,9 @@
 
     {% if banks %}
         {% for bank in banks %}
-            <div class="row">
+            <div class="row form-group border-bottom border-danger" >
                 <div class="col-md-4">
-                        <div class="container border-bottom  border-dark">
+                        <div class="container">
                                 <p>Title __________{{ bank.title}}</p>
                                  <p>Inn ___________{{ bank.inn}}</p>
                                  <p>Okpo ___________{{ bank.okpo}}</p>
@@ -64,7 +65,7 @@
                                  <p>currentBalance___  {{ bank.currentBalance}}</p>
                           </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 ">
                  {% for file in files %}
                     {% if file.feed == bank%}
                         <img src="{{file.documents.url}}" alt="">
@@ -99,6 +100,7 @@
             </tr>
             </thead>
             <tbody class="tb-info">
+            {{ applied_clients.id }}
             {% for client in applied_clients %}
                             <tr>
                                 <td>{{ client.id }}</td>
@@ -111,10 +113,10 @@
                                 <td>{{ client.dealTime  }}</td>
                                 <td>{{ client.credit_amount  }}</td>
                                 <td>
-                                    <a href="#"
-                                       class="btn btn-success" role="button">Share</a>
-{#                                    <a href="{%  url 'managers:apply_client' client.id %}"#}
-{#                                       class="btn btn-danger" role="button">Update</a>#}
+                                    <a href="{% url 'clients:look_to_client' client.id %}"
+                                       class="btn btn-success" role="button">Look</a>
+                                    <a href="{% url 'managers:shared_client' client.id %}"
+                                       class="btn btn-primary" role="button">Share</a>
                                 </td>
 
                             </tr>

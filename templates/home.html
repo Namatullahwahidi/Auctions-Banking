@@ -1,16 +1,27 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="//fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
+{% block Body %}
    <div >
 
-            <ul>
-                Clients
-                <li><a href="{% url 'clients:client' %}"> Sign up</a></li>
-                <li><a href="#"> Login</a></li>
+                <ul>
+                    Clients
+                    <li><a href="{% url 'clients:client' %}"> Sign up</a></li>
+                    <li><a href="{% url 'clients:login' %}"> Login</a></li>
 
              </ul>
               <ul>
@@ -20,7 +31,12 @@
                </li>
              </ul>
    </div>
-{% block Body %}
+
 {% endblock %}
+
+<script type="text/javascript" src="{%  static 'js/jquery.min.js'%}"></script>
+<script type="text/javascript" src="{%  static 'js/bootstrap.min.js'%}'"></script>
+<script type="text/javascript" src="{%  static 'js/script.js'%}"></script>
+
 </body>
 </html>

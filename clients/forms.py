@@ -8,9 +8,11 @@ from .models import Client, ApplyClient
 
 
 class ClientRegisterForm(forms.ModelForm):
+    # password = forms.CharField(widget=forms.PasswordInput)
+
     class Meta:
         model = Client
-        fields = ["name", "phone", "message", ]
+        fields = ["name", "phone",'email', "message"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -35,3 +37,10 @@ class ApplyClientForm(forms.ModelForm):
             'credit_history',
             'finan_perfor',
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'apply client'))
+
