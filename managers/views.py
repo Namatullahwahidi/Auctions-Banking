@@ -73,6 +73,15 @@ def shared_client(request, id):
         new_client.expire_date=form.cleaned_data.get('expire_date')
         new_client.start_rate=form.cleaned_data.get('start_rate')
         new_client.customer_rate=form.cleaned_data.get('customer_rate')
+        client.state=1
+        client.save()
         new_client.save()
         return redirect('/')
     return render(request, 'account/shared_clients.html', {'client': client, 'form': form})
+
+
+class Shared_client_list(ListView):
+    template_name = 'account/manager.html'
+    model = Shared_clients
+    queryset = Shared_clients.objects.filter().order_by('-expire_date')[:1]
+    context_object_name = 'shared_client_list'

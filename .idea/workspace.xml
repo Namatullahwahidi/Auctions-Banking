@@ -2,82 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_AUY5Z4A.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_HPiTru1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_N2D8hzP.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_OWZgwFp.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_SyHzQCs.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_tB4ZGQY.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_thGlO4s.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images1_yIvWu6J.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_CL7AeZ6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_Cdk0sQA.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_Gywg5Ps.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_IpooJjO.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_TDXci9X.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_U9KoZkc.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_ZDa5wQB.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_cJs1VfT.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_5X3hikj.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_JJkNW4I.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_KMlz5kT.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_MsHP7iL.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_TrMP5T4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_jZ5hp2l.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_mLhq4J8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images_qLzaO0E.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_4YBJB0D.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_BtHvkig.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_IHoCWJJ.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_LUaBo1p.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_N6zHFAM.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_Nzk04h5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_SyWizSH.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_tI7mCoj.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/niyet2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0002_namat_shared_clients.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0003_auto_20200223_0515.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/account/shared_clients.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clients/apply_client.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clients/client_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0002_applyclient_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0004_auto_20200223_2219.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0005_auto_20200223_2225.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0006_auto_20200223_2259.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auction/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctiondb.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/auctiondb.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctiondb.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/auctiondb.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0002_client_email.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0003_auto_20200217_1144.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0002_auto_20200215_1059.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0003_auto_20200216_0617.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0004_auto_20200216_0618.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0005_auto_20200216_0621.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0006_auto_20200216_0631.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0007_auto_20200216_0802.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0008_auto_20200216_0851.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0009_auto_20200217_0236.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0010_auto_20200217_1049.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/apply_client.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/account/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/showClient.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clients/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +165,7 @@
       <workItem from="1582361972230" duration="12093000" />
       <workItem from="1582429226397" duration="14502000" />
       <workItem from="1582481514052" duration="1150000" />
-      <workItem from="1582513516496" duration="674000" />
+      <workItem from="1582513516496" duration="6150000" />
     </task>
     <servers />
   </component>

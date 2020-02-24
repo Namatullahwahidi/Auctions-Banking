@@ -32,7 +32,7 @@ class ApplyClient(models.Model):
     finan_perfor = models.CharField(max_length=100)
     created_date = models.DateTimeField(
         default=timezone.now)
-
+    state = models.BooleanField(default=0)
     class Meta:
         ordering = ['-created_date']
 

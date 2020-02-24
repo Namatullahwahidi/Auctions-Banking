@@ -33,10 +33,13 @@ class FeedFile(models.Model):
 
 class Shared_clients(models.Model):
     client = models.ForeignKey(ApplyClient, on_delete=models.CASCADE, default=0)
-    start_date = models.DateTimeField(default=timezone.now())
-    expire_date = models.DateTimeField(default=timezone.now())
+    start_date = models.DateTimeField()
+    expire_date = models.DateTimeField()
     start_rate = models.CharField(max_length=75)
     customer_rate = models.CharField(max_length=75)
     bank = models.CharField(max_length=100, default="Demir")
+
+
+
 
 
