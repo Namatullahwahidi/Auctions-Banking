@@ -33,8 +33,28 @@ class ApplyClient(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now)
     state = models.BooleanField(default=0)
+
     class Meta:
         ordering = ['-created_date']
 
     def __str__(self):
         return self.client.name
+
+
+class BasicInformation(models.Model):
+    client=models.ForeignKey(Client,on_delete=models.CASCADE)
+    applicant_name=models.CharField(max_length=100)
+    spouse_name=models.CharField(max_length=100)
+    dependant=models.CharField(max_length=100)
+    birth_date=models.CharField(max_length=100)
+    birth_palce=models.CharField(max_length=100)
+    passport_no=models.CharField(max_length=100)
+    issued_by=models.CharField(max_length=100)
+    issued_date=models.CharField(max_length=100)
+    register_place=models.CharField(max_length=100)
+    residential_add=models.CharField(max_length=100)
+    region=models.CharField(max_length=100)
+    inn=models.CharField(max_length=100)
+    contacts=models.CharField(max_length=100)
+    education=models.CharField(max_length=100)
+

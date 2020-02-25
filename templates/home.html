@@ -18,13 +18,17 @@
 {% block Body %}
    <div >
 
-                <ul>
+                  <ul>
                     Clients
                     <li><a href="{% url 'clients:client' %}"> Sign up</a></li>
                     <li><a href="{% url 'clients:login' %}"> Login</a></li>
 
-             </ul>
-              <ul>
+                 </ul>
+                <ul>
+                    Bank
+                    <Li><a href="{% url 'managers:shared_client_list' %}">Bank</a> </Li>
+                </ul>
+               <ul>
                   Admin
                <li>
                    <a href="{% url 'managers:login' %}">Login</a>

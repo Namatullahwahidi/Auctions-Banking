@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0002_applyclient_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0004_auto_20200223_2219.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0005_auto_20200223_2225.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0006_auto_20200223_2259.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0003_basicinformation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0007_auto_20200223_2343.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0008_shared_clients_percent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +162,9 @@
       <workItem from="1582361972230" duration="12093000" />
       <workItem from="1582429226397" duration="14502000" />
       <workItem from="1582481514052" duration="1150000" />
-      <workItem from="1582513516496" duration="6150000" />
+      <workItem from="1582513516496" duration="7741000" />
+      <workItem from="1582530302111" duration="2108000" />
+      <workItem from="1582541697082" duration="3958000" />
     </task>
     <servers />
   </component>
@@ -228,10 +227,10 @@
       <screen x="54" y="27" width="1312" height="741" />
     </state>
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741@54.27.1312.741" timestamp="1581830982475" />
-    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1582513516455">
+    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1582541696090">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
-    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1582513516455" />
+    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1582541696090" />
     <state x="478" y="317" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582177395464">
       <screen x="54" y="27" width="1312" height="741" />
     </state>

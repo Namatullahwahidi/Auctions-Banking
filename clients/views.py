@@ -37,14 +37,14 @@ def Login(request):
 
 def set_login_password(request, id):
     client = get_object_or_404(Client, id=id)
-    # subject = 'Thank you for registering to our site'
-    # message = ' it  means a world to us '
-    # email_from = settings.EMAIL_HOST_USER
-    # recipient_list = ['namatullahwahidi@yahoo.com', ]
-    # send_mail(subject, message, email_from, recipient_list)
     password = BaseUserManager().make_random_password()
     client.password = password
     client.save()
+    # subject = 'Thank you for registering to our site'
+    # message =password
+    # email_from = settings.EMAIL_HOST_USER
+    # recipient_list = ['namatullahwahidi@yahoo.com', ]
+    # send_mail(subject, message, email_from, recipient_list)
     clients = Client.objects.all()
     context = {'clients': clients}
     return render(request, 'account/manager.html', context)
