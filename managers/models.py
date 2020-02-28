@@ -32,7 +32,7 @@ class FeedFile(models.Model):
 
 
 class Shared_clients(models.Model):
-    client = models.ForeignKey(ApplyClient, on_delete=models.CASCADE, default=0)
+    client = models.ForeignKey(ApplyClient, on_delete=models.CASCADE)
     start_date = models.DateTimeField( default=timezone.now)
     expire_date = models.DateTimeField( default=timezone.now)
     start_rate = models.CharField(max_length=75)

@@ -2,14 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0003_basicinformation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0007_auto_20200223_2343.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0008_shared_clients_percent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0002_credit_history.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0003_auto_20200228_1445.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0004_auto_20200228_1542.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercise" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/media/media/clients/telegram2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clients/client_forms.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/migrations/0002_applyclient_state.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/migrations/0003_basicinformation.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0002_namat_shared_clients.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0003_auto_20200223_0515.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0004_auto_20200223_2219.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0005_auto_20200223_2225.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0006_auto_20200223_2259.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0007_auto_20200223_2343.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/migrations/0008_shared_clients_percent.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clients/client_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/client_info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +55,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -56,6 +75,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -67,7 +87,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="editor.breadcrumbs" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -165,6 +185,16 @@
       <workItem from="1582513516496" duration="7741000" />
       <workItem from="1582530302111" duration="2108000" />
       <workItem from="1582541697082" duration="3958000" />
+      <workItem from="1582622817289" duration="2479000" />
+      <workItem from="1582636504861" duration="5069000" />
+      <workItem from="1582683151824" duration="1236000" />
+      <workItem from="1582719277590" duration="2620000" />
+      <workItem from="1582731430272" duration="9773000" />
+      <workItem from="1582773055874" duration="7121000" />
+      <workItem from="1582794299455" duration="611000" />
+      <workItem from="1582810721767" duration="5955000" />
+      <workItem from="1582886033897" duration="2032000" />
+      <workItem from="1582912415458" duration="11643000" />
     </task>
     <servers />
   </component>
@@ -179,10 +209,15 @@
       <screen x="54" y="27" width="1312" height="741" />
     </state>
     <state x="305" y="59" width="800" height="684" key="#Inspections/54.27.1312.741@54.27.1312.741" timestamp="1581841025650" />
-    <state x="168" y="55" width="1124" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581831009036">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state x="161" y="55" width="1124" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582719450082">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state x="161" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog/46.27.1320.741@46.27.1320.741" timestamp="1582719450082" />
     <state x="168" y="55" width="1124" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/54.27.1312.741@54.27.1312.741" timestamp="1581831009036" />
+    <state x="408" y="202" width="586" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582917991558">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state x="408" y="202" width="586" height="397" key="#com.intellij.fileTypes.FileTypeChooser/46.27.1320.741@46.27.1320.741" timestamp="1582917991558" />
     <state x="518" y="116" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1582327702478">
       <screen x="54" y="27" width="1312" height="741" />
     </state>
@@ -223,13 +258,15 @@
       <screen x="54" y="27" width="1312" height="741" />
     </state>
     <state width="1266" height="177" key="GridCell.Tab.1.right/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
-    <state x="199" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1581830982475">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state x="192" y="27" width="1135" height="741" key="SettingsEditor" timestamp="1582720865075">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state x="192" y="27" width="1135" height="741" key="SettingsEditor/46.27.1320.741@46.27.1320.741" timestamp="1582720865075" />
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741@54.27.1312.741" timestamp="1581830982475" />
-    <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1582541696090">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state x="357" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1582912414450">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state x="357" y="306" key="com.intellij.ide.util.TipDialog/46.27.1320.741@46.27.1320.741" timestamp="1582912414450" />
     <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1582541696090" />
     <state x="478" y="317" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582177395464">
       <screen x="54" y="27" width="1312" height="741" />
@@ -239,9 +276,14 @@
       <screen x="54" y="27" width="1312" height="741" />
     </state>
     <state x="162" y="27" width="863" height="741" key="find.popup/54.27.1312.741@54.27.1312.741" timestamp="1581588083266" />
-    <state x="450" y="99" width="672" height="678" key="search.everywhere.popup" timestamp="1582385159372">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state x="296" y="62" width="800" height="684" key="scopes" timestamp="1582918017404">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state x="296" y="62" width="800" height="684" key="scopes/46.27.1320.741@46.27.1320.741" timestamp="1582918017404" />
+    <state x="444" y="99" width="677" height="678" key="search.everywhere.popup" timestamp="1582929493809">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state x="444" y="99" width="677" height="678" key="search.everywhere.popup/46.27.1320.741@46.27.1320.741" timestamp="1582929493809" />
     <state x="450" y="99" width="672" height="678" key="search.everywhere.popup/54.27.1312.741@54.27.1312.741" timestamp="1582385159372" />
   </component>
 </project>

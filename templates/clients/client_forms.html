@@ -1,0 +1,93 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% block Body %}
+
+
+
+               <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="container form-group">
+                        {% if form %}
+                        {{ form.as_table }}
+                        {% endif %}
+                        {% if form1 %}
+                        {{ form1.as_table}}
+                        {% endif %}
+
+                 </div>
+                 <button type="submit" class="btn btn-primary">Next</button>
+             </form>
+
+
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="container form-group">#}
+{#            {% if basic_form %}#}
+{#                {{ basic_form }}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Next</button>#}
+{#    </form>#}
+{##}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="container form-group">#}
+{#            {% if business_form %}#}
+{#                {{ business_form }}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Next</button>#}
+{#    </form>#}
+{##}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="container form-group">#}
+{#            {% if work_form %}#}
+{#                {{ work_form }}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Next</button>#}
+{#    </form>#}
+{##}
+{##}
+{##}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="container form-group">#}
+{#            {% if cred_line_form %}#}
+{#                {{ cred_line_form }}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Next</button>#}
+{#    </form>#}
+{##}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="container form-group">#}
+{#            {% if collateral_form %}#}
+{#                {{ collateral_form }}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Next</button>#}
+{#    </form>#}
+{##}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="container form-group">#}
+{#            {% if guarantee_form %}#}
+{#                {{ guarantee_form }}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Next</button>#}
+{#    </form>#}
+{##}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <div class="container form-group">#}
+{#            {% if cred_history_form %}#}
+{#                {{ cred_history_form }}#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Next</button>#}
+{#    </form>#}
+{% endblock %}

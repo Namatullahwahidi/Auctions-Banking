@@ -83,35 +83,24 @@
 
 
 
-    {% if applied_clients %}
+    {% if basic_info %}
         <table class="table table-hover table-bordered table-striped mb-0">
             <thead class="bg-success">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">credit_history</th>
-                <th scope="col">finan_perfor</th>
-                <th scope="col">dealTime</th>
-                <th scope="col">credit_amount</th>
-                <th scope="col">show</th>
-                 <th scope="col">dealTime</th>
-                <th scope="col">credit_amount</th>
+                <th scope="col">Contacts</th>
                 <th scope="col">show</th>
             </tr>
             </thead>
             <tbody class="tb-info">
-            {{ applied_clients.id }}
-            {% for client in applied_clients %}
+            {{ basic_info.id }}
+            {% for client in basic_info %}
                             <tr>
                                 <td>{{ client.id }}</td>
-                                <td>{{ client.client.name }}</td>
-                                <td>{{ client.credit_history }}</td>
-                                <td>{{ client.finan_perfor  }}</td>
-                                <td>{{ client.dealTime  }}</td>
-                                <td>{{ client.credit_amount  }}</td>
-                                <td>{{ client.finan_perfor  }}</td>
-                                <td>{{ client.dealTime  }}</td>
-                                <td>{{ client.credit_amount  }}</td>
+                                <td>{{ client.applicant_name}}</td>
+                                <td>{{ client.contacts }}</td>
+
                                 <td>
                                     <a href="{% url 'clients:look_to_client' client.id %}"
                                        class="btn btn-success" role="button">Look</a>
@@ -126,7 +115,6 @@
                             </tr>
 
             {% endfor %}
-
             {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}

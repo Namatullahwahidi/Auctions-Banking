@@ -1,74 +1,192 @@
 {% extends 'home.html'%}
 {% block Body %}
+<div class="row">
+    <div class="col-6">
+        <h1>Basic informations</h1>
+            {% for foo in basic_info %}
+                <table class="table table-active table-sm">
+                <tr>
+                    <td><p>Name:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.applicant_name }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Spouse Name:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.spouse_name }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Dependent:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.dependant }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>birth Date:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.birth_date }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Birth Place:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.birth_palce }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Passport No:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.passport_no }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Issued By:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.issued_by }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Issued Date:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.issued_date }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Reg Place:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.register_place }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Residential:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.residential_add }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Region :: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.region }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Inn:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.inn }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Contact:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.contacts }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>education:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.education }}</p></td>
+                </tr>
 
-   {% if client %}
-
-            {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li style="color: red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                </table>
+            {% endfor %}
+    </div>
+        <div class="col-6">
+             <h1>Business</h1>
+                {% for foo in business %}
+                    <table class="table table-active table-sm">
+                    <tr>
+                        <td><p>Kind Activity:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.kind_activity }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Experience:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.experience }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Employee Number:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.employee_num }}</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Address:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.address }}</p></td>
+                    </tr>
+                        </table>
                     {% endfor %}
-                </ul>
-            {% endif %}
+                {% for foo in work %}
+                    <h>Works</h>
+                        <table class="table table-active table-sm">
+                            <tr>
+                                <td><p>Kind Activity :: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.kind_activity }}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Experience:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.experience }}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Address :: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.address }}</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Certificate:: &nbsp;&nbsp;&nbsp;&nbsp;</p><img src="{{  foo.certificate.url }}"></td>
+                            </tr>
 
-    <div class="container">
+                    </table>
+                {% endfor %}
+        </div>
+</div>
 
-          <div class="row form-group">
-            <div class="col-2"> ID :  </div>
-            <div class="col-10">{{ client.client.id }}</div>
-          </div>
 
-           <div class="row form-group">
-            <div class="col-2"> Name: </div>
-            <div class="col-10">{{ client.client.name }}</div>
-          </div>
+<div class="row">
 
-          <div class="row form-group">
-            <div class="col-2"> Phone: </div>
-            <div class="col-10">{{ client.client.phone}}</div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-2">Email: </div>
-            <div class="col-10">{{ client.client.email }}</div>
-          </div>
-          <div class="row form-group">
-            <div class="col-2">DealTime:</div>
-            <div class="col-10">{{ client.dealTime }}</div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-2">Credit_purpose:</div>
-            <div class="col-10">{{ client.credit_purpose }}</div>
-          </div>
-         <div class="row form-group">
-            <div class="col-2">Credit_amount:</div>
-            <div class="col-10">{{ client.credit_amount }}</div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-2">Collateral:</div>
-            <div class="col-10">{{ client.collateral }}</div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-2"> Credit_history:</div>
-            <div class="col-10">{{ client.credit_history}}</div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-2">Finan_perfor </div>
-            <div class="col-10">{{ client.finan_perfor }}</div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-2"> Message </div>
-            <div class="col-10">{{ client.client.message }}</div>
-          </div>
+    <div class="col-6">
+        <h>Credit Line</h>
+        {% for foo in credit_line %}
+            <table class="table table-active table-sm">
+                <tr>
+                    <td><p>Proposed Loan:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.proposed_loan }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Credit Amount:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.credit_amount }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Period:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.period }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Goal:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.goal }}</p></td>
+                </tr>
+               <tr>
+                    <td><p>Contribution Amount:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.contribution_amount }}</p></td>
+                </tr>
+            </table>
+        {% endfor %}
 
     </div>
+     <div class="col-6">
+     <h>Collateral</h>
+        {% for foo in collateral %}
+            <table class="table table-active table-sm">
+                <tr>
+                    <td><p>Description:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.description }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Owner:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.owner }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Location:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.location }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Market Value:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.market_value }}</p></td>
+                </tr>
+            </table>
+        {% endfor %}
 
-   {% endif %}
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-6">
+        <h>Guarantee</h>
+        {% for foo in guarantee %}
+            <table class="table table-active table-sm">
+                <tr>
+                    <td><p>Number:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.No }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Applicant:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.applicant }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Address:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.address }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Income:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.income }}</p></td>
+                </tr>
+                 <tr>
+                    <td><p>Market Value:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.market_value }}</p></td>
+                </tr>
+            </table>
+        {% endfor %}
 
+     </div>
+     <div class="col-6">
+     <h>Credit History</h>
+        {% for foo in credit_history %}
+            <table class="table table-active table-sm">
+                <tr>
+                    <td><p>Bank:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.bank }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Receiving_date:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.receiving_date }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Return_date:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.return_date }}</p></td>
+                </tr>
+                <tr>
+                    <td><p>Maturity_date:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.maturity_date }}</p></td>
+                </tr>
+               <tr>
+                    <td><p>Rate:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.rate }}</p></td>
+                </tr>
+               <tr>
+                    <td><p>Currency_unit:: &nbsp;&nbsp;&nbsp;&nbsp;{{ foo.currency_unit }}</p></td>
+                </tr>
+            </table>
+        {% endfor %}
+
+    </div>
+    </div>
 {% endblock %}

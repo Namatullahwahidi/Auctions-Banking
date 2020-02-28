@@ -1,0 +1,62 @@
+https://bitbucket.org/sherkazy_kokumbaev/booking/src/master/company/models.py
+
+
+
+# class ApplyForms(TemplateView):
+#     basic_form_class = BasicInformationForm
+#     business_form_class = BusinessForm
+#     work_form_class = WorksForm
+#     cred_line_form_class = Credit_LineForm
+#     collateral_form_class = CollateralForm
+#     guarantee_form_class = GuaranteeForm
+#     cred_history_form_class = Credit_HistoryForm
+#     template_name = "clients/client_forms.html"
+#
+#     def post(self, request):
+#         post_date = request.POST or None
+#         basic_form = self.basic_form_class(post_date, prefix="basic_form")
+#         business_form = self.business_form_class(post_date, prefix="business_form")
+#         work_form = self.work_form_class(post_date, prefix="work_form")
+#         cred_line_form = self.cred_line_form_class(post_date, prefix="cred_line_form")
+#         collateral_form = self.collateral_form_class(post_date, prefix="collateral_form")
+#         guarantee_form = self.guarantee_form_class(post_date, prefix="guarantee_form")
+#         cred_history_form = self.cred_history_form_class(post_date, prefix="guarantee_form")
+#
+#         context = self.get_context_data(basic_form=basic_form, business_form=business_form,
+#                                         work_form=work_form, cred_line_form=cred_line_form,
+#                                         collateral_form=collateral_form, guarantee_form=guarantee_form,
+#                                         cred_history_form=cred_history_form)
+#
+#         if basic_form.is_valid():
+#             pass
+#
+#         return self.render_to_response(context)
+#
+#     def form_save(self, form):
+#         obj = form.save()
+#         messages.success("succefully")
+#         return obj
+#
+#     def get(self, request, *args, **kwargs):
+#         return self.post(request, *args, **kwargs)
+
+
+# class Client_Information(TemplateView):
+#     template_name = "clients/client_forms.html"
+#
+#     def get(self, request, *args, **kwargs):
+#         pass
+#
+#     def post(self, request, *args, **kwargs):
+#         basic_form = BasicInformationForm(request.POST or None)
+#         business_form = BusinessForm(request.POST or None)
+#         work_form = WorksForm(request.POST or None, request.FILES or None)
+#         credit_form = Credit_LineForm(request.POST or None)
+#         collateral_form=CollateralForm(request.POST or None)
+#         guarantee_form=GuaranteeForm(request.POST or None)
+#         credit_history_form=Credit_HistoryForm(request.POST or None)
+#
+#         context={
+#             'basic_form':basic_form
+#         }
+#         return
