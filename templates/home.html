@@ -17,7 +17,10 @@
 <body>
 {% block Body %}
    <div >
-
+                {% if password and email %}
+                    Password is::{{ password }}
+                    Email is::{{ email }}
+                {% endif %}
                   <ul>
                     Clients
                     <li><a href="{% url 'clients:client' %}"> Sign up</a></li>
@@ -26,7 +29,7 @@
                  </ul>
                 <ul>
                     Bank
-                    <Li><a href="{% url 'managers:shared_client_list' %}">Bank</a> </Li>
+                    <Li><a href="{% url 'clients:shared_clients_view' %}">Bank</a> </Li>
                 </ul>
                <ul>
                   Admin

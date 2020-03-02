@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block MainContent %}
+
+        <table class="table table-hover table-bordered table-striped mb-0">
+            <thead class="bg-success">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Name</th>
+                <th scope="col">Propose Credit</th>
+                <th scope="col">Credit Amount</th>
+                <th scope="col">Collateral</th>
+                <th scope="col">Credit History</th>
+                <th scope="col">Financial Performance</th>
+                 <th scope="col"></th>
+
+            </tr>
+            </thead>
+            <tbody class="tb-info">
+            {% for accepted_client in accepted_clients %}
+            <tr>
+                <td>
+                {{ accepted_client.start_date }}
+                </td>
+                <td>
+                ********************
+                </td>
+                <td>
+                {{ accepted_client.credit_line.proposed_loan }}
+                </td>
+                <td>
+                {{ accepted_client.credit_line.credit_amount }}
+                </td>
+                <td>
+                {{ accepted_client.collateral.description }}
+                </td>
+                <td>
+                    {{ accepted_client.credit_history.bank }}
+                </td>
+                <td>
+                    Financial Performance
+                </td>
+                <td>
+                    <a href="#" class="btn btn-success" role="button">Confirm</a>
+                </td>
+               </tr>
+            {% endfor %}
+
+
+{#            {% for client in basic_info %}#}
+{#                            <tr>#}
+{#                                  <td>#}
+{#                                    {% for foo in  basic_info %}#}
+{#                                        {{ foo.start_date}}#}
+{#                                    {% endfor %}#}
+{#                                  </td>#}
+{#                                  <td>#}
+{#                                    {% for foo in  accepted_client%}#}
+{#                                        {{ foo.applicant_name}}#}
+{#                                    {% endfor %}#}
+{#                                  </td>#}
+{##}
+{##}
+{#                                <td>#}
+{#                                    <a href="#"#}
+{#                                       class="btn btn-success" role="button">Confirm</a>#}
+{#                                 <td></td>#}
+{#                            </tr>#}
+{##}
+{#            {% endfor %}#}
+            </tbody>
+        </table>
+
+{% endblock %}

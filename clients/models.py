@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from managers.models import Bank
 
 
 class Client(models.Model):
@@ -10,6 +11,7 @@ class Client(models.Model):
     password = models.CharField(max_length=128, default=None, null=True)
     created_date = models.DateTimeField(
         default=timezone.now)
+    state = models.BooleanField(default=0)
 
     class Meta:
         ordering = ['-created_date']
@@ -21,27 +23,6 @@ class Client(models.Model):
     def __str__(self):
         return self.name
 
-
-class ApplyClient(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    dealTime = models.DateTimeField(default=timezone.now)
-    credit_purpose = models.CharField(max_length=100)
-    credit_amount = models.CharField(max_length=100)
-    collateral = models.CharField(max_length=200)
-    credit_history = models.CharField(max_length=200)
-    finan_perfor = models.CharField(max_length=100)
-    created_date = models.DateTimeField(
-        default=timezone.now)
-    state = models.BooleanField(default=0)
-
-    class Meta:
-        ordering = ['-id']
-
-    def __str__(self):
-        return self.client.name
-
-    class Meta:
-        ordering = ['-created_date']
 
 
 class BasicInformation(models.Model):
@@ -133,3 +114,19 @@ class Credit_History(models.Model):
 
     class Meta:
         ordering = ['-id']
+
+
+class AcceptClient(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    credit_line = models.ForeignKey(Credit_line, on_delete=models.CASCADE)
+    collateral = models.ForeignKey(Collateral, on_delete=models.CASCADE)
+    credit_history = models.ForeignKey(Credit_History, on_delete=models.CASCADE)
+    start_date = models.DateTimeField(default=timezone.now)
+    expire_date = models.DateTimeField(default=timezone.now)
+    start_rate = models.DecimalField(max_digits=20, decimal_places=2, blank=False, null=False, default=0)
+
+
+class Subscribe(models.Model):
+    client = models.ForeignKey(AcceptClient, on_delete=models.CASCADE)
+    bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
+    rate = models.DecimalField(max_digits=20, decimal_places=2, blank=False, null=False, default=0)

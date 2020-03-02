@@ -29,7 +29,7 @@
                                     <a href="{%  url 'clients:delete_client' client.id %}"
                                        class="btn btn-danger" role="button">Del</a>
                                     <a href="{%  url 'clients:login_password' client.id %}"
-                                       class="btn btn-primary" role="button">Login password</a>
+                                       class="btn btn-primary" role="button"> Set Login Password</a>
                                 </td>
 
                             </tr>
@@ -102,13 +102,17 @@
                                 <td>{{ client.contacts }}</td>
 
                                 <td>
-                                    <a href="{% url 'clients:look_to_client' client.id %}"
-                                       class="btn btn-success" role="button">Look</a>
-                                    {% if client.state %}
-                                        Shared
-                                        {% else %}
-                                    <a href="{% url 'managers:shared_client' client.id %}"
-                                       class="btn btn-primary" role="button">Share</a>
+                                    <a href="{% url 'clients:view_a_client' client.client.id %}"
+                                       class="btn btn-success" role="button">View</a>
+                                    {% if client.client.state %}
+                                        Accepted
+                                    {% else %}
+                                    <a href="{% url 'clients:accept_client' client.client.id %}"
+                                       class="btn btn-primary" role="button">Accept
+                                    </a>
+                                     <a href="#"
+                                       class="btn btn-danger" role="button">Disapprove
+                                    </a>
                                     {% endif %}
                                 </td>
 
@@ -127,41 +131,41 @@
             </tbody>
         </table>
    {% endif %}
-     {% if shared_client_list %}
-        <table class="table table-hover table-bordered table-striped mb-0">
-            <thead class="bg-success">
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Start Date</th>
-                <th scope="col">Expire Date</th>
-                <th scope="col">Start Rate</th>
-                <th scope="col">Customer Rate</th>
-            </tr>
-            </thead>
-            <tbody class="tb-info">
-            {% for client in shared_client_list %}
-                            <tr>
-                                <td>{{ client.id }}</td>
-                                <td>{{ client.start_date }}</td>
-                                <td>{{ client.expire_date }}</td>
-                                <td>{{ client.start_rate  }} %</td>
-                                <td>{{ client.customer_rate  }} %</td>
-
-                            </tr>
-            {% endfor %}
-
-            {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li style="color: red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-
-
-            </tbody>
-        </table>
-   {% endif %}
+{#     {% if shared_client_list %}#}
+{#        <table class="table table-hover table-bordered table-striped mb-0">#}
+{#            <thead class="bg-success">#}
+{#            <tr>#}
+{#                <th scope="col">ID</th>#}
+{#                <th scope="col">Start Date</th>#}
+{#                <th scope="col">Expire Date</th>#}
+{#                <th scope="col">Start Rate</th>#}
+{#                <th scope="col">Customer Rate</th>#}
+{#            </tr>#}
+{#            </thead>#}
+{#            <tbody class="tb-info">#}
+{#            {% for client in shared_client_list %}#}
+{#                            <tr>#}
+{#                                <td>{{ client.id }}</td>#}
+{#                                <td>{{ client.start_date }}</td>#}
+{#                                <td>{{ client.expire_date }}</td>#}
+{#                                <td>{{ client.start_rate  }} %</td>#}
+{#                                <td>{{ client.customer_rate  }} %</td>#}
+{##}
+{#                            </tr>#}
+{#            {% endfor %}#}
+{##}
+{#            {% if messages %}#}
+{#                <ul class="messages">#}
+{#                    {% for message in messages %}#}
+{#                    <li style="color: red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#            {% endif %}#}
+{##}
+{##}
+{#            </tbody>#}
+{#        </table>#}
+{#   {% endif %}#}
 
 {% endblock %}
 

@@ -10,9 +10,9 @@ from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-from managers.forms import BankRegisterForm,SharedCleintForm
-from managers.models import Bank, FeedFile,Shared_clients
-from clients.models import ApplyClient
+from managers.forms import BankRegisterForm
+from managers.models import Bank, FeedFile
+
 
 
 def Home(request):
@@ -63,25 +63,10 @@ def getBanks(request):
     return render(request, 'account/manager.html', context)
 
 
-def shared_client(request, id):
-    client = get_object_or_404(ApplyClient, id=id)
-    form = SharedCleintForm(request.POST or None)
-    if form.is_valid():
-        new_client = Shared_clients()
-        new_client.client = client  # Add person
-        new_client.start_date=form.cleaned_data.get('start_date')
-        new_client.expire_date=form.cleaned_data.get('expire_date')
-        new_client.start_rate=form.cleaned_data.get('start_rate')
-        new_client.customer_rate=form.cleaned_data.get('customer_rate')
-        client.state=1
-        client.save()
-        new_client.save()
-        return redirect('/')
-    return render(request, 'account/shared_clients.html', {'client': client, 'form': form})
 
 
-class Shared_client_list(ListView):
-    template_name = 'account/manager.html'
-    model = Shared_clients
-    queryset = Shared_clients.objects.filter().order_by('-expire_date')[:1]
-    context_object_name = 'shared_client_list'
+# class Shared_client_list(ListView):
+#     template_name = 'account/manager.html'
+#     model = Shared_clients
+#     queryset = Shared_clients.objects.filter().order_by('-expire_date')[:1]
+#     context_object_name = 'shared_client_list'

@@ -2,15 +2,15 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRe
 from django.urls import reverse
 from django.contrib import messages
 from django.views.generic import ListView, CreateView, TemplateView
-from clients.models import Client, ApplyClient
-from clients.forms import ClientRegisterForm, ApplyClientForm, LoginForm
+from clients.models import Client
+from clients.forms import ClientRegisterForm, LoginForm
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib.auth.base_user import BaseUserManager
-from clients.forms import BasicInformationForm, BusinessForm, \
+from clients.forms import BasicInformationForm, BusinessForm, AcceptClientForm, \
     WorksForm, Credit_LineForm, CollateralForm, GuaranteeForm, Credit_HistoryForm
 from clients.models import Client, BasicInformation, Business, Works, Credit_line, \
-    Collateral, Guarantee, Credit_History
+    Collateral, Guarantee, Credit_History, AcceptClient
 
 
 class ClientRegister(CreateView):
@@ -61,8 +61,8 @@ def BusinessWorkView(request, id):
         instance.client = client
         id = client.id
         instance.save()
-        instance1=form1.save(commit=False)
-        instance1.client=client
+        instance1 = form1.save(commit=False)
+        instance1.client = client
         instance1.save()
         return HttpResponseRedirect(reverse('clients:credit_line_view', args=(id,)))
     context = {'form': form, 'form1': form1}
@@ -126,6 +126,8 @@ def set_login_password(request, id):
     password = BaseUserManager().make_random_password()
     client.password = password
     client.save()
+    print(password)
+    print(client.email)
     # subject = 'Thank you for registering to our site'
     # message =password
     # email_from = settings.EMAIL_HOST_USER
@@ -136,16 +138,16 @@ def set_login_password(request, id):
     return render(request, 'account/manager.html', context)
 
 
-def look_to_client(request, id):
+def view_aClient(request, id):
     client = get_object_or_404(Client, id=id)
-    basic_info=BasicInformation.objects.filter(client=client)
-    business=Business.objects.filter(client=client)
-    work=Works.objects.filter(client=client)
-    credit_line=Credit_line.objects.filter(client=client)
-    collateral=Collateral.objects.filter(client=client)
-    guarantee=Guarantee.objects.filter(client=client)
-    credit_history=Credit_History.objects.filter(client=client)
-    context={
+    basic_info = BasicInformation.objects.filter(client=client)
+    business = Business.objects.filter(client=client)
+    work = Works.objects.filter(client=client)
+    credit_line = Credit_line.objects.filter(client=client)
+    collateral = Collateral.objects.filter(client=client)
+    guarantee = Guarantee.objects.filter(client=client)
+    credit_history = Credit_History.objects.filter(client=client)
+    context = {
         'client': client,
         'basic_info': basic_info,
         'business': business,
@@ -186,25 +188,43 @@ def delete_client(request, id):
     article = get_object_or_404(Client, id=id)
     article.delete()
     messages.success(request, "Client  was deleted successfully")
-    return redirect("managers:get_client")
+    return redirect("clients:get_client")
 
 
-"""
-if request.POST():
-    a_valid = formA.is_valid()
-    b_valid = formB.is_valid()
-    c_valid = formC.is_valid()
-    # we do this since 'and' short circuits and we want to check to whole page for form errors
-    if a_valid and b_valid and c_valid:
-        a = formA.save()
-        b = formB.save(commit=False)
-        c = formC.save(commit=False)
-        b.foreignkeytoA = a
-        b.save()
-        c.foreignkeytoB = b
-        c.save()
+def accept_client(request, id):
+    client = get_object_or_404(Client, id=id)
+    form = AcceptClientForm(request.POST or None)
+    basic_info = BasicInformation.objects.filter(client=client)
+    credit_line = Credit_line.objects.filter(client=client)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.client = client
+        instance.credit_line = get_object_or_404(Credit_line, client=client)
+        instance.collateral = get_object_or_404(Collateral, client=client)
+        instance.credit_history = get_object_or_404(Credit_History, client=client)
+        client1 = Client.objects.filter(pk=client.id)
+        instance.client.state = 1
+        instance.save()
+        for i in client1:
+            i.state = 1
+            i.save()
+        return HttpResponseRedirect(reverse('clients:shared_clients_view'))
+    context = {
+        'basic_info': basic_info,
+        'form': form,
+        'credit_line': credit_line,
 
-"""
+    }
+    return render(request, 'clients/accept_clients.html', context)
+
+
+def shared_clients_view(request):
+    accepted_clients = AcceptClient.objects.all()
+    context = {
+        'accepted_clients': accepted_clients
+    }
+    return render(request, 'clients/shared_clients.html', context)
+
 
 
 # https://stackoverflow.com/questions/569468/django-multiple-models-in-one-template-using-forms
@@ -256,24 +276,3 @@ if request.POST():
 # })
 
 
-class FirstView(TemplateView):
-    template_name = ''
-
-    def get(self, request, *args, **kwargs):
-        form = BasicInformationForm()
-        context = {
-            'form': form,
-        }
-        return render(request, self.template_name, context)
-
-    def post(self, request, *args, **kwargs):
-        form = BasicInformationForm()
-        if form.is_valid():
-            client = request.user
-            instance = form.save(commit=False)
-            instance.client = client
-            instance.save()
-        context = {
-            'form': form,
-        }
-        return render(request, self.template_name, context)

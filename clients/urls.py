@@ -20,7 +20,9 @@ urlpatterns = [
     path('collateral/view/<int:id>/', views.CollateralView, name="collateral_view"),
     path('guarantee/view/<int:id>/', views.GuaranteeView, name="guarantee_view"),
     path('credit/history/view/<int:id>/', views.CreditHistoryView, name="credit_history_view"),
-    path('look_to_client/<int:id>/', views.look_to_client, name="look_to_client"),
+    path('view_a_client/<int:id>/', views.view_aClient, name="view_a_client"),
+    path('accept_client/<int:id>/', views.accept_client, name="accept_client"),
+    path('shared/clients/view/', views.shared_clients_view, name="shared_clients_view"),
     path('login_password/<int:id>/', views.set_login_password, name="login_password"),
     url(r'^list_applied_clients/$', List_AppliedClients.as_view(), name='list_applied_clients'),
 

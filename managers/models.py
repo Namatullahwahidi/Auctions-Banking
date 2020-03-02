@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from clients.models import ApplyClient
 
 
 class Profile(models.Model):
@@ -29,17 +28,6 @@ class Bank(models.Model):
 class FeedFile(models.Model):
     documents = models.FileField(upload_to="media", default='/media/index.jpeg', blank=True)
     feed = models.ForeignKey(Bank, on_delete=models.CASCADE, related_name='documents')
-
-
-class Shared_clients(models.Model):
-    client = models.ForeignKey(ApplyClient, on_delete=models.CASCADE)
-    start_date = models.DateTimeField( default=timezone.now)
-    expire_date = models.DateTimeField( default=timezone.now)
-    start_rate = models.CharField(max_length=75)
-    customer_rate = models.CharField(max_length=75)
-    bank = models.CharField(max_length=100, default="Demir")
-    percent = models.DecimalField(max_digits=20, decimal_places=2, blank=False, null=False, default=0)
-
 
 
 

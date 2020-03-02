@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block MainContent %}
+<form method="post">
+{% csrf_token %}
+            <div class="container" style="padding-left: 200px;padding-right: 200px;
+                                          padding-top: 50px;padding-bottom: 50px">
+
+
+                 <table class="table table-hover table-bordered table-striped mb-0">
+                        <thead class="bg-success">
+                        <tr>
+                            <th scope="col">Client Name</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">Expire Date</th>
+                            <th scope="col">Start Rate</th>
+                            <th scope="col">Client Rate</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody class="tb-info">
+
+                                        <tr>
+                                            <td>
+                                            {% for foo in basic_info %}
+                                                {{ foo.applicant_name}}
+                                            {% endfor %}
+                                            </td>
+                                            <td>{{ form.start_date|as_crispy_field }}</td>
+                                            <td>{{ form.expire_date|as_crispy_field }}</td>
+                                            <td>{{ form.start_rate |as_crispy_field }}</td>
+                                            <td>
+                                                {% for foo in credit_line %}
+                                                   {{ foo.contribution_amount}}
+                                                {% endfor %}
+                                            </td>
+{#                                            <td>#}
+{#                                                <a href="{% url 'clients:shared_clients_view' %}"#}
+{#                                                   class="btn btn-primary" role="button">Share#}
+{#                                                </a>#}
+{#                                            </td>#}
+                                            <td>
+                                                <button type="submit" class="btn btn-primary">Share</button>
+                                            </td>
+
+                                        </tr>
+                        </tbody>
+                 </table>
+            </div>
+
+ </form>
+
+
+{% endblock %}

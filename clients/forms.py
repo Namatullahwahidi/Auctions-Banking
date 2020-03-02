@@ -3,9 +3,8 @@ from django.contrib.auth.models import User
 from django.forms import ClearableFileInput
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
-
-from .models import Client, ApplyClient
-from clients.models import BasicInformation, Business, \
+from .models import Client
+from clients.models import BasicInformation, Business,AcceptClient,\
     Works, Credit_line, Collateral, Guarantee, Credit_History
 
 
@@ -28,23 +27,23 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput())
 
 
-class ApplyClientForm(forms.ModelForm):
-    class Meta:
-        model = ApplyClient
-        fields = [
-            'dealTime',
-            'credit_purpose',
-            'credit_amount',
-            'collateral',
-            'credit_history',
-            'finan_perfor',
-        ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'apply client'))
+# class ApplyClientForm(forms.ModelForm):
+#     class Meta:
+#         model = ApplyClient
+#         fields = [
+#             'dealTime',
+#             'credit_purpose',
+#             'credit_amount',
+#             'collateral',
+#             'credit_history',
+#             'finan_perfor',
+#         ]
+#
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         self.helper = FormHelper()
+#         self.helper.form_method = 'post'
+#         self.helper.add_input(Submit('submit', 'apply client'))
 
 
 class BasicInformationForm(forms.ModelForm):
@@ -69,7 +68,6 @@ class BasicInformationForm(forms.ModelForm):
 
 
 class BusinessForm(forms.ModelForm):
-
     class Meta:
         model = Business
         fields = [
@@ -137,4 +135,14 @@ class Credit_HistoryForm(forms.ModelForm):
             'rate',
             'currency_unit',
 
+        ]
+
+
+class AcceptClientForm(forms.ModelForm):
+    class Meta:
+        model = AcceptClient
+        fields = [
+            'start_date',
+            'expire_date',
+            'start_rate',
         ]

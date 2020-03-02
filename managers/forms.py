@@ -5,18 +5,7 @@ from django.contrib.auth.models import User
 from django.forms import ClearableFileInput
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
-from managers.models import Bank,Shared_clients
-
-
-class SharedCleintForm(forms.ModelForm):
-    class Meta:
-        model = Shared_clients
-        fields = [
-            'start_date',
-            'expire_date',
-            'start_rate',
-            'customer_rate'
-        ]
+from managers.models import Bank
 
 
 class BankRegisterForm(forms.ModelForm):
