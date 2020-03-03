@@ -41,7 +41,7 @@
                     Financial Performance
                 </td>
                 <td>
-                    <a href="#" class="btn btn-success" role="button">Confirm</a>
+                    <a href="{% url 'clients:subscribe_view' accepted_client.id %}" class="btn btn-success" role="button">Confirm</a>
                 </td>
                </tr>
             {% endfor %}

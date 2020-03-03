@@ -2,15 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRe
 from django.urls import reverse
 from django.contrib import messages
 from django.views.generic import ListView, CreateView, TemplateView
-from clients.models import Client
 from clients.forms import ClientRegisterForm, LoginForm
-from django.core.mail import send_mail
-from django.conf import settings
 from django.contrib.auth.base_user import BaseUserManager
 from clients.forms import BasicInformationForm, BusinessForm, AcceptClientForm, \
-    WorksForm, Credit_LineForm, CollateralForm, GuaranteeForm, Credit_HistoryForm
+    WorksForm, Credit_LineForm, CollateralForm, GuaranteeForm, Credit_HistoryForm,SubscribeForm
 from clients.models import Client, BasicInformation, Business, Works, Credit_line, \
-    Collateral, Guarantee, Credit_History, AcceptClient
+    Collateral, Guarantee, Credit_History, AcceptClient, Subscribe
 
 
 class ClientRegister(CreateView):
@@ -226,6 +223,21 @@ def shared_clients_view(request):
     return render(request, 'clients/shared_clients.html', context)
 
 
+def SubscribesView(request, id):
+    instance=get_object_or_404(AcceptClient,id=id)
+    # subscribe=Subscribe.objects.filter(accept_client=instance)
+    form=SubscribeForm(request.POST or None)
+    subscriber=Subscribe.objects.all()
+    print(subscriber)
+    if form.is_valid():
+        pass
+    context={
+        'subscriber':subscriber,
+        'instance':instance,
+        'form':form,
+    }
+
+    return render(request,"clients/subscribe.html",context)
 
 # https://stackoverflow.com/questions/569468/django-multiple-models-in-one-template-using-forms
 # class PrimaryForm(ModelForm):
@@ -274,5 +286,3 @@ def shared_clients_view(request):
 #     'b_form': b_form,
 #     'c_form': c_form,
 # })
-
-

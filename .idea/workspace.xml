@@ -2,34 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0005_acceptcleint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0006_auto_20200229_1059.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0007_auto_20200229_1100.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0008_auto_20200229_1116.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0009_auto_20200301_1250.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0010_auto_20200302_0509.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clients/migrations/0011_auto_20200302_0515.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/clients/20180429_132206.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/clients/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/clients/images1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_fh8icaC.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/media/media/index_LGCyPyP.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/migrations/0002_auto_20200229_1023.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/clients/shared_clients.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0013_auto_20200302_1008.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0014_auto_20200302_1138.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0015_auto_20200302_1142.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0016_auto_20200302_2106.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/media/media/clients/Screenshot_from_2020-02-12_15-46-52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0003_delete_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/migrations/0004_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/clients/subscribe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise" beforeDir="false" afterPath="$PROJECT_DIR$/exercise" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/shared_clients.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/accept_clients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clients/shared_clients.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/shared_clients.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +189,9 @@
       <workItem from="1583078104464" duration="6102000" />
       <workItem from="1583118628445" duration="3473000" />
       <workItem from="1583137557063" duration="599000" />
-      <workItem from="1583146425294" duration="1525000" />
+      <workItem from="1583146425294" duration="13062000" />
+      <workItem from="1583202147729" duration="478000" />
+      <workItem from="1583203575085" duration="1733000" />
     </task>
     <servers />
   </component>
@@ -269,10 +260,10 @@
     </state>
     <state x="192" y="27" width="1135" height="741" key="SettingsEditor/46.27.1320.741@46.27.1320.741" timestamp="1582720865075" />
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741@54.27.1312.741" timestamp="1581830982475" />
-    <state x="357" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1583146791197">
+    <state x="357" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1583204097056">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state x="357" y="306" key="com.intellij.ide.util.TipDialog/46.27.1320.741@46.27.1320.741" timestamp="1583146791197" />
+    <state x="357" y="306" key="com.intellij.ide.util.TipDialog/46.27.1320.741@46.27.1320.741" timestamp="1583204097056" />
     <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1582541696090" />
     <state x="478" y="317" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582177395464">
       <screen x="54" y="27" width="1312" height="741" />

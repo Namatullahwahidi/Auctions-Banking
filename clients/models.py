@@ -24,7 +24,6 @@ class Client(models.Model):
         return self.name
 
 
-
 class BasicInformation(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE)
     applicant_name = models.CharField(max_length=100)
@@ -45,6 +44,9 @@ class BasicInformation(models.Model):
     class Meta:
         ordering = ['-id']
 
+    def __str__(self):
+        return self.applicant_name;
+
 
 class Business(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE)
@@ -56,6 +58,9 @@ class Business(models.Model):
     class Meta:
         ordering = ['-id']
 
+    def __str__(self):
+        return self.kind_activity
+
 
 class Works(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE)
@@ -66,6 +71,9 @@ class Works(models.Model):
 
     class Meta:
         ordering = ['-id']
+
+    def __str__(self):
+        return self.kind_activity
 
 
 class Credit_line(models.Model):
@@ -79,6 +87,9 @@ class Credit_line(models.Model):
     class Meta:
         ordering = ['-id']
 
+    def __str__(self):
+        return self.contribution_amount
+
 
 class Collateral(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE)
@@ -89,6 +100,9 @@ class Collateral(models.Model):
 
     class Meta:
         ordering = ['-id']
+
+    def __str__(self):
+        return self.description
 
 
 class Guarantee(models.Model):
@@ -101,6 +115,9 @@ class Guarantee(models.Model):
 
     class Meta:
         ordering = ['-id']
+
+    def __str__(self):
+        return self.applicant
 
 
 class Credit_History(models.Model):
@@ -115,6 +132,9 @@ class Credit_History(models.Model):
     class Meta:
         ordering = ['-id']
 
+    def __str__(self):
+        return self.bank
+
 
 class AcceptClient(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
@@ -125,8 +145,20 @@ class AcceptClient(models.Model):
     expire_date = models.DateTimeField(default=timezone.now)
     start_rate = models.DecimalField(max_digits=20, decimal_places=2, blank=False, null=False, default=0)
 
+    def __str__(self):
+        return self.client.name
+
 
 class Subscribe(models.Model):
-    client = models.ForeignKey(AcceptClient, on_delete=models.CASCADE)
+    accept_client = models.ForeignKey(AcceptClient, on_delete=models.CASCADE)
     bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
     rate = models.DecimalField(max_digits=20, decimal_places=2, blank=False, null=False, default=0)
+
+    # number_choice = [(i,i) for i in range(accept_client.credit_line.contribution_amount,accept_client.start_rate)]
+    # num_of_adults = models.DecimalField(default=0, choices=number_choice,null=True)
+
+    def __str__(self):
+        return self.accept_client.client;
+
+    def __str__(self):
+        return self.accept_client

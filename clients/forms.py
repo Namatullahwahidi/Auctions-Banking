@@ -4,8 +4,8 @@ from django.forms import ClearableFileInput
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from .models import Client
-from clients.models import BasicInformation, Business,AcceptClient,\
-    Works, Credit_line, Collateral, Guarantee, Credit_History
+from clients.models import BasicInformation, Business, AcceptClient, \
+    Works, Credit_line, Collateral, Guarantee, Credit_History, Subscribe
 
 
 class ClientRegisterForm(forms.ModelForm):
@@ -25,25 +25,6 @@ class ClientRegisterForm(forms.ModelForm):
 class LoginForm(forms.Form):
     email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password = forms.CharField(widget=forms.PasswordInput())
-
-
-# class ApplyClientForm(forms.ModelForm):
-#     class Meta:
-#         model = ApplyClient
-#         fields = [
-#             'dealTime',
-#             'credit_purpose',
-#             'credit_amount',
-#             'collateral',
-#             'credit_history',
-#             'finan_perfor',
-#         ]
-#
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         self.helper = FormHelper()
-#         self.helper.form_method = 'post'
-#         self.helper.add_input(Submit('submit', 'apply client'))
 
 
 class BasicInformationForm(forms.ModelForm):
@@ -146,3 +127,9 @@ class AcceptClientForm(forms.ModelForm):
             'expire_date',
             'start_rate',
         ]
+
+
+class SubscribeForm(forms.ModelForm):
+    class Meta:
+        model = Subscribe
+        fields=['rate']

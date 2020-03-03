@@ -1,5 +1,6 @@
 https://bitbucket.org/sherkazy_kokumbaev/booking/src/master/company/models.py
-
+user override 
+https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html
 
 
 # class ApplyForms(TemplateView):

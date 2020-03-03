@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block MainContent %}
+<form method="post">
+{% csrf_token %}
+            <div class="container form-group" style="padding-left: 200px;padding-right: 200px;">
+               <table class="table table-hover table-bordered table-striped mb-0">
+                        <thead class="bg-primary">
+                        <tr>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">Expire Date</th>
+                            <th scope="col">Client Rate</th>
+                            <th scope="col">Start Rate</th>
+                        </tr>
+                        </thead>
+                        <tbody class="tb-info">
+                        <tr>
+                            <td>
+                                {{ instance.start_date }}
+                            </td>
+                            <td>
+                                {{ instance.expire_date }}
+                            </td>
+                            <td>
+                                {{ instance.credit_line.contribution_amount }}
+                            </td>
+                            <td>
+                                {{ instance.start_rate }}
+                            </td>
+                        </tr>
+                        </tbody>
+               </table>
+            </div>
+            <div class="container form-group" style="padding-left: 200px;padding-right: 200px;">
+               </table>
+                     <table class="table table-hover table-bordered table-striped">
+                        <thead class="bg-success">
+                        <tr>
+                            <th scope="col">Rate Date</th>
+                            <th scope="col">Bank</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody class="tb-info">
+                        <tr>
+                            {% for foo in subscriber %}
+                                    <td>
+                                        {{ foo.accept_client.start_date }}
+                                    </td>
+                                    <td>
+                                        {{ foo.bank.title }}
+                                    </td>
+                                    <td>
+                                       {{foo.rate}}
+                                    </td>
+                            {% endfor %}
+
+
+                            <td></td>
+
+
+                        </tr>
+                        </tbody>
+               </table>
+
+
+
+
+            </div>
+</form>
+
+
+
+
+
+{% endblock %}
