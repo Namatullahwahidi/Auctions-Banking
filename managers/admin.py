@@ -1,7 +1,8 @@
 from django.contrib import admin
-from managers.models import Bank,FeedFile,Profile
-# Register your models here.
+from managers.models import Bank,FeedFile
+
 admin.site.register(Bank)
 admin.site.register(FeedFile)
-admin.site.register(Profile)
+
+
 

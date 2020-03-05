@@ -155,10 +155,8 @@ class Subscribe(models.Model):
     rate = models.DecimalField(max_digits=20, decimal_places=2, blank=False, null=False, default=0)
 
     # number_choice = [(i,i) for i in range(accept_client.credit_line.contribution_amount,accept_client.start_rate)]
+
     # num_of_adults = models.DecimalField(default=0, choices=number_choice,null=True)
 
     def __str__(self):
-        return self.accept_client.client;
-
-    def __str__(self):
-        return self.accept_client
+        return self.accept_client.client

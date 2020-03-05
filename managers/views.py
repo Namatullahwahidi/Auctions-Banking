@@ -35,24 +35,20 @@ def BankRegister(request):
         newBank.title = form.cleaned_data.get('title')
         newBank.inn = form.cleaned_data.get('inn')
         newBank.okpo = form.cleaned_data.get('okpo')
-        newBank.legalAddress = form.cleaned_data.get('legalAddress')
-        newBank.legalAddress1 = form.cleaned_data.get('legalAddress1')
-        newBank.responsPerson = form.cleaned_data.get('responsPerson')
-        newBank.bankContacts = form.cleaned_data.get('bankContacts')
-        newBank.specialistContacts = form.cleaned_data.get('specialistContacts')
+        newBank.L_addr = form.cleaned_data.get('L_addr')
+        newBank.L_addr1 = form.cleaned_data.get('L_addr1')
+        newBank.R_person = form.cleaned_data.get('R_person')
+        newBank.B_contact = form.cleaned_data.get('B_contact')
+        newBank.S_contact = form.cleaned_data.get('S_contact')
         newBank.currentBalance = form.cleaned_data.get('currentBalance')
         newBank.save()
         print(request.FILES.getlist('documents'))
         for f in request.FILES.getlist('documents'):
             file_instance = FeedFile(documents=f, feed=newBank)
             file_instance.save()
-            print("saved ok")
-        print("saved")
         context = {'bank': newBank, 'form': form}
         return render(request, 'account/bank.html', context)
-
     context = {'form': form}
-    print("here is")
     return render(request, 'account/bank.html', context)
 
 

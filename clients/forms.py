@@ -132,4 +132,4 @@ class AcceptClientForm(forms.ModelForm):
 class SubscribeForm(forms.ModelForm):
     class Meta:
         model = Subscribe
-        fields=['rate']
+        fields=[]

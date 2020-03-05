@@ -20,7 +20,6 @@ urlpatterns=[
     path('manager/',views.Manager,name='manager'),
     path('bank/',views.BankRegister,name='bank'),
     url(r'^get_bank/$', views.getBanks, name='get_bank'),
-    # url(r'^shared/client/list/$', Shared_client_list.as_view(), name='shared_client_list'),
     url(r'^login/$', login,{'template_name':'account/login.html'},  name='login'),
     url(r'^logout/$', logout,name='logout'),
 

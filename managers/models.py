@@ -1,30 +1,8 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User, AbstractUser
+from django.contrib.auth.models import User
 
 
-class Profile(models.Model):
-    CLIENTS = 1
-    DOCTORS = 2
-    ADMIN = 3
-    ROLE_CHOICES = (
-        (CLIENTS, 'Clients'),
-        (DOCTORS, 'Doctors'),
-        (ADMIN, 'Admin'),
-    )
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, blank=True, default=CLIENTS)
-# class User(AbstractUser):
-#     USER_TYPE_CHOICES = (
-#         (1, 'admin'),
-#         (2, 'bank'),
-#         (3, 'client'),
-#     )
-#
-#     user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES)
-# class User(AbstractUser):
-#     is_student = models.BooleanField('student status', default=False)
-#     is_teacher = models.BooleanField('teacher status', default=False)
 
 class Bank(models.Model):
     title = models.CharField(max_length=100)
