@@ -5,11 +5,11 @@ from django.conf.urls import url
 
 from clients import views
 from clients.views import ListClients, List_AppliedClients, ClientRegister
-from clients.models import Client
+from clients.models import Register
 
 app_name = 'clients'
 urlpatterns = [
-    path('client/', ClientRegister.as_view(model=Client), name='client'),
+    path('client/', ClientRegister.as_view(model=Register), name='client'),
     path('login/', views.Login, name="login"),
     url(r'^get_client/$', ListClients.as_view(), name='get_client'),
     # path('apply/forms/', ApplyForms.as_view(), name='apply_forms'),

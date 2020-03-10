@@ -1,25 +1,64 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.db import transaction
 from django.forms import ClearableFileInput
+from django.core.exceptions import ValidationError
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
-from .models import Client
+from django.contrib.auth.forms import UserCreationForm
+from .models import Register
 from clients.models import BasicInformation, Business, AcceptClient, \
     Works, Credit_line, Collateral, Guarantee, Credit_History, Subscribe
 
 
-class ClientRegisterForm(forms.ModelForm):
-    # password = forms.CharField(widget=forms.PasswordInput)
+# class ClientRegisterForm(forms.ModelForm):
+#     # password = forms.CharField(widget=forms.PasswordInput)
+#     class Meta:
+#         model = Register
+#         fields = ["name", "phone", 'email', "message"]
+#
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         self.helper = FormHelper()
+#         self.helper.form_method = 'post'
+#         self.helper.add_input(Submit('submit', 'Save client'))
 
-    class Meta:
-        model = Client
+class ClientRegisterForm(forms.ModelForm):
+    class Meta(UserCreationForm.Meta):
+        model = Register
         fields = ["name", "phone", 'email', "message"]
+
+    def clean_username(self):
+        username = self.cleaned_data['username'].lower()
+        r = User.objects.filter(username=username)
+        if r.count():
+            raise ValidationError("Username already exists")
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data['email'].lower()
+        r = User.objects.filter(email=email)
+        if r.count():
+            raise ValidationError("Email already exists")
+        return email
+
+    @transaction.atomic
+    def save(self, commit=True):
+        user = Register.objects.create(
+            name=self.cleaned_data['name'],
+            email=self.cleaned_data['email'],
+            phone=self.cleaned_data['phone'],
+            message=self.cleaned_data['message'],
+            is_client=True,
+        )
+        return user
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Save client'))
+
 
 
 class LoginForm(forms.Form):
@@ -132,4 +171,4 @@ class AcceptClientForm(forms.ModelForm):
 class SubscribeForm(forms.ModelForm):
     class Meta:
         model = Subscribe
-        fields=[]
+        fields = []

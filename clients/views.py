@@ -7,15 +7,19 @@ from clients.forms import ClientRegisterForm, LoginForm
 from django.contrib.auth.base_user import BaseUserManager
 from clients.forms import BasicInformationForm, BusinessForm, AcceptClientForm, \
     WorksForm, Credit_LineForm, CollateralForm, GuaranteeForm, Credit_HistoryForm, SubscribeForm
-from clients.models import Client, BasicInformation, Business, Works, Credit_line, \
+from clients.models import Register, BasicInformation, Business, Works, Credit_line, \
     Collateral, Guarantee, Credit_History, AcceptClient, Subscribe
 from managers.models import Bank
 
 
 class ClientRegister(CreateView):
-    model = Client
+    model = Register
     form_class = ClientRegisterForm
     template_name = '../templates/clients/sign_up.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['user_type'] = 'client'
+        return super().get_context_data(**kwargs)
 
 
 def Login(request):
@@ -26,7 +30,7 @@ def Login(request):
     if form.is_valid():
         email = form.cleaned_data.get('email')
         password = form.cleaned_data.get('password')
-        client = Client.objects.all().filter(email=email, password=password).values()
+        client = Register.objects.all().filter(email=email, password=password).values()
         if not client:
             messages.info(request, "Email or password is invalid")
             return render(request, 'clients/login.html', context)
@@ -39,7 +43,7 @@ def Login(request):
 
 
 def BasicView(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     basic_form = BasicInformationForm(request.POST or None)
     if basic_form.is_valid():
         instance = basic_form.save(commit=False)
@@ -52,7 +56,7 @@ def BasicView(request, id):
 
 
 def BusinessWorkView(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     form = BusinessForm(request.POST or None)
     form1 = WorksForm(request.POST or None, request.FILES)
     if form.is_valid() and form1.is_valid():
@@ -69,7 +73,7 @@ def BusinessWorkView(request, id):
 
 
 def CreditLineView(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     form = Credit_LineForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
@@ -82,7 +86,7 @@ def CreditLineView(request, id):
 
 
 def CollateralView(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     form = CollateralForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
@@ -95,7 +99,7 @@ def CollateralView(request, id):
 
 
 def GuaranteeView(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     form = GuaranteeForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
@@ -108,7 +112,7 @@ def GuaranteeView(request, id):
 
 
 def CreditHistoryView(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     form = Credit_HistoryForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
@@ -121,7 +125,7 @@ def CreditHistoryView(request, id):
 
 
 def set_login_password(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     password = BaseUserManager().make_random_password()
     client.password = password
     client.save()
@@ -132,13 +136,13 @@ def set_login_password(request, id):
     # email_from = settings.EMAIL_HOST_USER
     # recipient_list = ['namatullahwahidi@yahoo.com', ]
     # send_mail(subject, message, email_from, recipient_list)
-    clients = Client.objects.all()
+    clients = Register.objects.all()
     context = {'clients': clients}
     return render(request, 'account/manager.html', context)
 
 
 def view_aClient(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     basic_info = BasicInformation.objects.filter(client=client)
     business = Business.objects.filter(client=client)
     work = Works.objects.filter(client=client)
@@ -161,7 +165,7 @@ def view_aClient(request, id):
 
 class List_AppliedClients(ListView):
     template_name = 'account/manager.html'
-    model = Client
+    model = Register
     context_object_name = 'applied_clients'
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -179,19 +183,19 @@ class List_AppliedClients(ListView):
 
 class ListClients(ListView):
     template_name = 'account/manager.html'
-    model = Client
+    model = Register
     context_object_name = 'clients'
 
 
 def delete_client(request, id):
-    article = get_object_or_404(Client, id=id)
+    article = get_object_or_404(Register, id=id)
     article.delete()
     messages.success(request, "Client  was deleted successfully")
     return redirect("clients:get_client")
 
 
 def accept_client(request, id):
-    client = get_object_or_404(Client, id=id)
+    client = get_object_or_404(Register, id=id)
     form = AcceptClientForm(request.POST or None)
     basic_info = BasicInformation.objects.filter(client=client)
     credit_line = Credit_line.objects.filter(client=client)
@@ -230,12 +234,12 @@ def SubscribesView(request, id):
     form = SubscribeForm(request.POST or None)
     subscriber = Subscribe.objects.all()
     bank = get_object_or_404(Bank, id=3)
-    client_rate=accept_client.credit_line.contribution_amount
-    start_rate=accept_client.start_rate
-    object1= Subscribe.objects.values_list('rate')
-    min=object1.order_by('rate').first()
+    client_rate = accept_client.credit_line.contribution_amount
+    start_rate = accept_client.start_rate
+    object1 = Subscribe.objects.values_list('rate')
+    min = object1.order_by('rate').first()
     if min is not None:
-        start_rate=min[0]
+        start_rate = min[0]
 
     # print(min[0])
     # rate = Subscribe.objects.all().aggregate(Min('rate')).get('rate')
@@ -252,8 +256,8 @@ def SubscribesView(request, id):
         instance = form.save(commit=False)
         instance.accept_client = accept_client
         instance.bank = bank
-        selected_rate=request.POST['selected_rate']
-        instance.rate=selected_rate
+        selected_rate = request.POST['selected_rate']
+        instance.rate = selected_rate
         # print(selected_rate)
         instance.save()
         # print(start_rate)
@@ -263,8 +267,8 @@ def SubscribesView(request, id):
         'subscriber': subscriber,
         'accept_client': accept_client,
         'form': form,
-        'client_rate':client_rate,
-        'start_rate':start_rate,
+        'client_rate': client_rate,
+        'start_rate': start_rate,
     }
 
     return render(request, "clients/subscribe.html", context)

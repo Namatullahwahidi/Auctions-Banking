@@ -3,7 +3,7 @@ from django.utils import timezone
 from managers.models import Bank
 
 
-class Client(models.Model):
+class Register(models.Model):
     name = models.CharField(max_length=42)
     phone = models.CharField(max_length=15)
     email = models.EmailField(max_length=100)
@@ -11,7 +11,8 @@ class Client(models.Model):
     password = models.CharField(max_length=128, default=None, null=True)
     created_date = models.DateTimeField(
         default=timezone.now)
-    state = models.BooleanField(default=0)
+    is_client=models.BooleanField(default=False)
+    is_bank=models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-created_date']
@@ -25,7 +26,7 @@ class Client(models.Model):
 
 
 class BasicInformation(models.Model):
-    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+    client = models.OneToOneField(Register, on_delete=models.CASCADE)
     applicant_name = models.CharField(max_length=100)
     spouse_name = models.CharField(max_length=100)
     dependant = models.CharField(max_length=100)
@@ -49,7 +50,7 @@ class BasicInformation(models.Model):
 
 
 class Business(models.Model):
-    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+    client = models.OneToOneField(Register, on_delete=models.CASCADE)
     kind_activity = models.CharField(max_length=100)
     experience = models.CharField(max_length=100)
     employee_num = models.CharField(max_length=100)
@@ -63,7 +64,7 @@ class Business(models.Model):
 
 
 class Works(models.Model):
-    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+    client = models.OneToOneField(Register, on_delete=models.CASCADE)
     kind_activity = models.CharField(max_length=100)
     experience = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
@@ -77,7 +78,7 @@ class Works(models.Model):
 
 
 class Credit_line(models.Model):
-    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+    client = models.OneToOneField(Register, on_delete=models.CASCADE)
     proposed_loan = models.CharField(max_length=100)
     credit_amount = models.CharField(max_length=100)
     period = models.DateTimeField()
@@ -92,7 +93,7 @@ class Credit_line(models.Model):
 
 
 class Collateral(models.Model):
-    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+    client = models.OneToOneField(Register, on_delete=models.CASCADE)
     description = models.CharField(max_length=100)
     owner = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
@@ -106,7 +107,7 @@ class Collateral(models.Model):
 
 
 class Guarantee(models.Model):
-    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+    client = models.OneToOneField(Register, on_delete=models.CASCADE)
     No = models.PositiveIntegerField()
     applicant = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
@@ -121,7 +122,7 @@ class Guarantee(models.Model):
 
 
 class Credit_History(models.Model):
-    client = models.OneToOneField(Client, on_delete=models.CASCADE)
+    client = models.OneToOneField(Register, on_delete=models.CASCADE)
     bank = models.CharField(max_length=100)
     receiving_date = models.DateTimeField()
     return_date = models.DateTimeField()
@@ -137,7 +138,7 @@ class Credit_History(models.Model):
 
 
 class AcceptClient(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    client = models.ForeignKey(Register, on_delete=models.CASCADE)
     credit_line = models.ForeignKey(Credit_line, on_delete=models.CASCADE)
     collateral = models.ForeignKey(Collateral, on_delete=models.CASCADE)
     credit_history = models.ForeignKey(Credit_History, on_delete=models.CASCADE)
