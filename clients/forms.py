@@ -11,33 +11,21 @@ from clients.models import BasicInformation, Business, AcceptClient, \
     Works, Credit_line, Collateral, Guarantee, Credit_History, Subscribe
 
 
-# class ClientRegisterForm(forms.ModelForm):
-#     # password = forms.CharField(widget=forms.PasswordInput)
-#     class Meta:
-#         model = Register
-#         fields = ["name", "phone", 'email', "message"]
-#
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         self.helper = FormHelper()
-#         self.helper.form_method = 'post'
-#         self.helper.add_input(Submit('submit', 'Save client'))
-
 class ClientRegisterForm(forms.ModelForm):
     class Meta(UserCreationForm.Meta):
         model = Register
-        fields = ["name", "phone", 'email', "message"]
+        fields = ["username", "phone", 'email', "message"]
 
     def clean_username(self):
         username = self.cleaned_data['username'].lower()
-        r = User.objects.filter(username=username)
+        r = Register.objects.filter(username=username)
         if r.count():
             raise ValidationError("Username already exists")
         return username
 
     def clean_email(self):
         email = self.cleaned_data['email'].lower()
-        r = User.objects.filter(email=email)
+        r = Register.objects.filter(email=email)
         if r.count():
             raise ValidationError("Email already exists")
         return email
@@ -45,7 +33,7 @@ class ClientRegisterForm(forms.ModelForm):
     @transaction.atomic
     def save(self, commit=True):
         user = Register.objects.create(
-            name=self.cleaned_data['name'],
+            name=self.cleaned_data['username'],
             email=self.cleaned_data['email'],
             phone=self.cleaned_data['phone'],
             message=self.cleaned_data['message'],

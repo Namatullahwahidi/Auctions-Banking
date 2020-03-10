@@ -4,7 +4,7 @@ from managers.models import Bank
 
 
 class Register(models.Model):
-    name = models.CharField(max_length=42)
+    username = models.CharField(max_length=42)
     phone = models.CharField(max_length=15)
     email = models.EmailField(max_length=100)
     message = models.TextField()
@@ -22,7 +22,7 @@ class Register(models.Model):
         # return u'/manager/%d' % self.id
 
     def __str__(self):
-        return self.name
+        return self.username
 
 
 class BasicInformation(models.Model):
