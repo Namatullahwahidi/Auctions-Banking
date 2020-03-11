@@ -9,7 +9,7 @@ from django.views import View
 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from clients.models import Register
 from managers.forms import BankRegisterForm
 from managers.models import Bank, FeedFile
 
@@ -42,6 +42,10 @@ def BankRegister(request):
         newBank.S_contact = form.cleaned_data.get('S_contact')
         newBank.currentBalance = form.cleaned_data.get('currentBalance')
         newBank.save()
+        username=form.cleaned_data.get('username')
+        password=form.cleaned_data.get('password')
+        user=Register.objects.create(username=username,password=password)
+        user.save()
         print(request.FILES.getlist('documents'))
         for f in request.FILES.getlist('documents'):
             file_instance = FeedFile(documents=f, feed=newBank)
@@ -50,6 +54,15 @@ def BankRegister(request):
         return render(request, 'account/bank.html', context)
     context = {'form': form}
     return render(request, 'account/bank.html', context)
+
+# class BankRegister(CreateView):
+#     model = Bank
+#     form_class = BankRegisterForm
+#     template_name = '../templates/clients/sign_up.html'
+#
+#     def get_context_data(self, **kwargs):
+#         kwargs['user_type'] = 'bank'
+#         return super().get_context_data(**kwargs)
 
 
 def getBanks(request):

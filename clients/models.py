@@ -5,9 +5,9 @@ from managers.models import Bank
 
 class Register(models.Model):
     username = models.CharField(max_length=42)
-    phone = models.CharField(max_length=15)
+    phone = models.CharField(max_length=15,default="")
     email = models.EmailField(max_length=100)
-    message = models.TextField()
+    message = models.TextField(default="")
     password = models.CharField(max_length=128, default=None, null=True)
     created_date = models.DateTimeField(
         default=timezone.now)

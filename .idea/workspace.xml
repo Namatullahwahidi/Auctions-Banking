@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/clients/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0004_auto_20200311_0600.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0005_auto_20200311_0849.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0006_auto_20200311_0850.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_ZGEKVjg.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/media/media/images2_vepWjmb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/media/media/index_0omwk71.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/media/media/index_8y5hj9t.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clients/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +192,8 @@
       <workItem from="1583288126075" duration="5544000" />
       <workItem from="1583389593894" duration="2487000" />
       <workItem from="1583392325194" duration="10572000" />
-      <workItem from="1583816077565" duration="4253000" />
+      <workItem from="1583816077565" duration="6693000" />
+      <workItem from="1583918645626" duration="5879000" />
     </task>
     <servers />
   </component>
@@ -215,47 +226,55 @@
     </state>
     <state x="488" y="155" key="FileChooserDialogImpl/46.27.1320.741@46.27.1320.741" timestamp="1583816070839" />
     <state x="493" y="155" width="424" height="491" key="FileChooserDialogImpl/54.27.1312.741@54.27.1312.741" timestamp="1581704494516" />
-    <state width="1266" height="177" key="GridCell.Tab.0.bottom" timestamp="1581956946968">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.0.bottom" timestamp="1583927029413">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.0.bottom/46.27.1320.741@46.27.1320.741" timestamp="1583927029413" />
     <state width="1266" height="177" key="GridCell.Tab.0.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581956946968" />
-    <state width="1266" height="177" key="GridCell.Tab.0.center" timestamp="1581956946967">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.0.center" timestamp="1583927029411">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.0.center/46.27.1320.741@46.27.1320.741" timestamp="1583927029411" />
     <state width="1266" height="177" key="GridCell.Tab.0.center/54.27.1312.741@54.27.1312.741" timestamp="1581956946967" />
-    <state width="1266" height="177" key="GridCell.Tab.0.left" timestamp="1581956946966">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.0.left" timestamp="1583927029409">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.0.left/46.27.1320.741@46.27.1320.741" timestamp="1583927029409" />
     <state width="1266" height="177" key="GridCell.Tab.0.left/54.27.1312.741@54.27.1312.741" timestamp="1581956946966" />
-    <state width="1266" height="177" key="GridCell.Tab.0.right" timestamp="1581956946967">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.0.right" timestamp="1583927029412">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.0.right/46.27.1320.741@46.27.1320.741" timestamp="1583927029412" />
     <state width="1266" height="177" key="GridCell.Tab.0.right/54.27.1312.741@54.27.1312.741" timestamp="1581956946967" />
-    <state width="1266" height="177" key="GridCell.Tab.1.bottom" timestamp="1581956946969">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.1.bottom" timestamp="1583927029416">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.1.bottom/46.27.1320.741@46.27.1320.741" timestamp="1583927029416" />
     <state width="1266" height="177" key="GridCell.Tab.1.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
-    <state width="1266" height="177" key="GridCell.Tab.1.center" timestamp="1581956946969">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.1.center" timestamp="1583927029415">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.1.center/46.27.1320.741@46.27.1320.741" timestamp="1583927029415" />
     <state width="1266" height="177" key="GridCell.Tab.1.center/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
-    <state width="1266" height="177" key="GridCell.Tab.1.left" timestamp="1581956946968">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.1.left" timestamp="1583927029414">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.1.left/46.27.1320.741@46.27.1320.741" timestamp="1583927029414" />
     <state width="1266" height="177" key="GridCell.Tab.1.left/54.27.1312.741@54.27.1312.741" timestamp="1581956946968" />
-    <state width="1266" height="177" key="GridCell.Tab.1.right" timestamp="1581956946969">
-      <screen x="54" y="27" width="1312" height="741" />
+    <state width="1274" height="152" key="GridCell.Tab.1.right" timestamp="1583927029416">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
+    <state width="1274" height="152" key="GridCell.Tab.1.right/46.27.1320.741@46.27.1320.741" timestamp="1583927029416" />
     <state width="1266" height="177" key="GridCell.Tab.1.right/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
     <state x="192" y="27" width="1135" height="741" key="SettingsEditor" timestamp="1582720865075">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state x="192" y="27" width="1135" height="741" key="SettingsEditor/46.27.1320.741@46.27.1320.741" timestamp="1582720865075" />
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741@54.27.1312.741" timestamp="1581830982475" />
-    <state x="357" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1583392326492">
+    <state x="357" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1583918645418">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state x="357" y="306" key="com.intellij.ide.util.TipDialog/46.27.1320.741@46.27.1320.741" timestamp="1583392326492" />
+    <state x="357" y="306" key="com.intellij.ide.util.TipDialog/46.27.1320.741@46.27.1320.741" timestamp="1583918645418" />
     <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1582541696090" />
     <state x="478" y="317" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582177395464">
       <screen x="54" y="27" width="1312" height="741" />
