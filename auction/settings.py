@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'managers.apps.ManagersConfig',
-    'clients.apps.ClientsConfig',
+    'auctionApp.apps.AuctionappConfig',
     'crispy_forms',
     'bootstrap4',
 ]
@@ -158,10 +157,10 @@ STATICFILES_DIRS = (
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'managers/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'auctionApp/media')
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
-LOGIN_REDIRECT_URL='/manager'
+LOGIN_REDIRECT_URL='/managers/manager'
 LOGOUT_REDIRECT_URL="/"

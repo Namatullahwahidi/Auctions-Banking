@@ -26,7 +26,7 @@
              {% block  TopNav %}
                    {% if user.is_authenticated %}
                       <nav class="col-12 mb-1 navbar navbar-expand-lg" style="height: 40px" >
-                          <a class="navbar-brand" href="{% url 'managers:home' %}">Post</a>
+                          <a class="navbar-brand" href="{% url 'home' %}">Post</a>
                           <a class="navbar-brand" href="{% url 'managers:logout' %}">Logout</a>
                     </nav>
                          {% else %}
