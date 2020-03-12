@@ -13,7 +13,7 @@ class Register(models.Model):
         default=timezone.now)
     is_client = models.BooleanField(default=False)
     is_bank = models.BooleanField(default=False)
-
+    state=models.BooleanField(default=False)
     class Meta:
         ordering = ['-created_date']
 

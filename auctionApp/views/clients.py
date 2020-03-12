@@ -1,7 +1,8 @@
+from django.db.models import Min
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
-from django.views.generic import ListView, CreateView, TemplateView
+from django.views.generic import ListView, CreateView, TemplateView,UpdateView
 from django.contrib.auth.base_user import BaseUserManager
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -172,7 +173,7 @@ def view_aClient(request, id):
 
 
 class List_AppliedClients(ListView):
-    template_name = 'account/manager.html'
+    template_name = 'clients/list_applied_clients.html'
     model = Register
     context_object_name = 'applied_clients'
 
@@ -185,7 +186,6 @@ class List_AppliedClients(ListView):
         context['collateral'] = Collateral.objects.all()
         context['guarantee'] = Guarantee.objects.all()
         context['credit_history'] = Credit_History.objects.all()
-
         return context
 
 
@@ -214,10 +214,10 @@ def accept_client(request, id):
         instance.collateral = get_object_or_404(Collateral, client=client)
         instance.credit_history = get_object_or_404(Credit_History, client=client)
         client1 = Register.objects.filter(pk=client.id)
-        instance.client.state = 1
+        instance.client.state = True
         instance.save()
         for i in client1:
-            i.state = 1
+            i.state = True
             i.save()
         return HttpResponseRedirect(reverse('clients:shared_clients_view'))
     context = {
@@ -242,17 +242,16 @@ class SubscribesView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         form = SubscribeForm(request.POST or None)
-        subscriber = Subscribe.objects.all()
-        accept_client = AcceptClient.objects.get(id=self.kwargs['id'])
-        start_rate = accept_client.start_rate
-        object1 = Subscribe.objects.values_list('rate')
-        min = object1.order_by('rate').first()
-        if min is not None:
-            start_rate = min[0]
+        accepted_client = AcceptClient.objects.get(id=self.kwargs['id'])
+        start_rate = accepted_client.start_rate
+        subscriber = Subscribe.objects.filter(accept_client_id=self.kwargs['id'])
+        if subscriber:
+            startvalue = Subscribe.objects.filter(accept_client_id=self.kwargs['id']).order_by('rate').first()
+            start_rate = startvalue.rate
         args = {
             'form': form,
             'subscriber': subscriber,
-            'accept_client': accept_client,
+            'accept_client': accepted_client,
             'start_rate': start_rate,
         }
         return render(request, self.template_name, args)
@@ -266,12 +265,11 @@ class SubscribesView(TemplateView):
             selected_rate = request.POST['selected_rate']
             instance.rate = selected_rate
             instance.save()
-            subscriber = Subscribe.objects.all()
             start_rate = instance.accept_client.start_rate
-            object1 = Subscribe.objects.values_list('rate')
-            min = object1.order_by('rate').first()
-            if min is not None:
-                start_rate = min[0]
+            subscriber = Subscribe.objects.filter(accept_client_id=self.kwargs['id'])
+            if subscriber:
+                startvalue = Subscribe.objects.filter(accept_client_id=self.kwargs['id']).order_by('rate').first()
+                start_rate = startvalue.rate
 
         args = {
             'form': form,
@@ -280,3 +278,20 @@ class SubscribesView(TemplateView):
             'start_rate': start_rate,
         }
         return render(request, self.template_name, args)
+
+
+class SubscribeUpdateView(UpdateView):
+    form_class = SubscribeForm
+    model = Subscribe
+    template_name = 'clients/subscribe.html'
+
+    def get(self, request, **kwargs):
+        self.object = Subscribe.objects.get(id=self.kwargs['id'])
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        context = self.get_context_data(object=self.object, form=form)
+        return self.render_to_response(context)
+
+    def get_object(self, queryset=None):
+        obj = Subscribe.objects.get(id=self.kwargs['id'])
+        return obj

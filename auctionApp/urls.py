@@ -1,9 +1,12 @@
 from django.urls import path
 from django.conf.urls import url
 from django.urls import path, include
+from django.views.generic import UpdateView
+
+from auctionApp.forms import SubscribeForm
 from auctionApp.views import managers, clients
 from auctionApp.views.clients import ListClients, List_AppliedClients, ClientRegister,SubscribesView
-from auctionApp.models import Register
+from auctionApp.models import Register, Subscribe
 from django.contrib.auth.views import (
     login, logout,
 )

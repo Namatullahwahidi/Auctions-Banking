@@ -1,0 +1,56 @@
+ {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block MainContent %}
+
+
+    {% if basic_info %}
+        <table class="table table-hover table-bordered table-striped mb-0">
+            <thead class="bg-success">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Contacts</th>
+                <th scope="col">show</th>
+            </tr>
+            </thead>
+            <tbody class="tb-info">
+            {{ basic_info.id }}
+            {% for client in basic_info %}
+                            <tr>
+                                <td>{{ client.id }}</td>
+                                <td>{{ client.applicant_name}}</td>
+                                <td>{{ client.contacts }}</td>
+
+                                <td>
+                                    <a href="{% url 'clients:view_a_client' client.client.id %}"
+                                       class="btn btn-success" role="button">View</a>
+                                    {% if client.client.state %}
+                                        Accepted
+                                    {% else %}
+                                    <a href="{% url 'clients:accept_client' client.client.id %}"
+                                       class="btn btn-primary" role="button">Accept
+                                    </a>
+                                     <a href="#"
+                                       class="btn btn-danger" role="button">Disapprove
+                                    </a>
+                                    {% endif %}
+                                </td>
+
+                            </tr>
+
+            {% endfor %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li style="color: red" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+
+            </tbody>
+        </table>
+
+   {% endif %}
+
+{% endblock %}
