@@ -175,7 +175,7 @@ class AcceptClient(models.Model):
 
 class Subscribe(models.Model):
     accept_client = models.ForeignKey(AcceptClient, on_delete=models.CASCADE)
-    bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
+    bank = models.ForeignKey(Register, on_delete=models.CASCADE)
     rate = models.DecimalField(max_digits=20, decimal_places=2, blank=False, null=False, default=0)
 
     # number_choice = [(i,i) for i in range(accept_client.credit_line.contribution_amount,accept_client.start_rate)]

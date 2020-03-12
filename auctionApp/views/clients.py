@@ -1,16 +1,16 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
-from django.views.generic import ListView, CreateView, TemplateView
-from django.db.models import Min
+from django.views.generic import ListView, CreateView
 from django.contrib.auth.base_user import BaseUserManager
+from django.core.exceptions import ObjectDoesNotExist
 
 from auctionApp.forms import ClientRegisterForm, LoginForm
 from auctionApp.forms import BasicInformationForm, BusinessForm, AcceptClientForm, \
     WorksForm, Credit_LineForm, CollateralForm, GuaranteeForm, Credit_HistoryForm, SubscribeForm
-from auctionApp.models import Register, BasicInformation, Business, Works, Credit_line, \
+from auctionApp.models import BasicInformation, Business, Works, Credit_line, \
     Collateral, Guarantee, Credit_History, AcceptClient, Subscribe
-from auctionApp.models import Bank,Register
+from auctionApp.models import Register
 
 
 class ClientRegister(CreateView):
@@ -31,15 +31,22 @@ def Login(request):
     if form.is_valid():
         email = form.cleaned_data.get('email')
         password = form.cleaned_data.get('password')
-        client = Register.objects.all().filter(email=email, password=password).values()
-        if not client:
+        # user = Register.objects.all().filter(email=email, password=password)
+        try:
+            user = Register.objects.get(email=email, password=password)
+        except ObjectDoesNotExist:
             messages.info(request, "Email or password is invalid")
             return render(request, 'clients/login.html', context)
         else:
-
-            for i in client:
-                id = i['id']
-            return HttpResponseRedirect(reverse('clients:basic_view', args=(id,)))
+            if user.is_client:
+                return HttpResponseRedirect(reverse('clients:basic_view', args=(user.id,)))
+            elif user.is_bank:
+                accepted_clients = AcceptClient.objects.all()
+                context = {
+                    'accepted_clients': accepted_clients,
+                    "bank": user
+                }
+                return render(request, "clients/shared_clients.html", context)
     return render(request, "clients/login.html", context)
 
 
@@ -225,44 +232,33 @@ def accept_client(request, id):
 def shared_clients_view(request):
     accepted_clients = AcceptClient.objects.all()
     context = {
-        'accepted_clients': accepted_clients
+        'accepted_clients': accepted_clients,
     }
     return render(request, 'clients/shared_clients.html', context)
 
 
-def SubscribesView(request, id):
-    accept_client = get_object_or_404(AcceptClient, id=id)
+def SubscribesView(request, id, bankID):
+    accept_clients = get_object_or_404(AcceptClient, id=id)
     form = SubscribeForm(request.POST or None)
     subscriber = Subscribe.objects.all()
-    bank = get_object_or_404(Bank, id=3)
-    client_rate = accept_client.credit_line.contribution_amount
-    start_rate = accept_client.start_rate
+    bank = get_object_or_404(Register, id=bankID)
+    client_rate = accept_clients.credit_line.contribution_amount
+    start_rate = accept_clients.start_rate
     object1 = Subscribe.objects.values_list('rate')
     min = object1.order_by('rate').first()
     if min is not None:
         start_rate = min[0]
-
-    # print(min[0])
     # rate = Subscribe.objects.all().aggregate(Min('rate')).get('rate')
-    # print(rate)
-    # if rate is None:
-    #     print(rate)
-    # else:
-    #     print(rate)
-    # bank=Bank.objects.all()
-    # for i in bank:
-    #     print(i.id)
-
     if form.is_valid():
         instance = form.save(commit=False)
-        instance.accept_client = accept_client
+        instance.accept_client = accept_clients
+        # print("instance type",type(instance.bank))
+        print("bank type",type(bank))
         instance.bank = bank
         selected_rate = request.POST['selected_rate']
         instance.rate = selected_rate
-        # print(selected_rate)
         instance.save()
-        # print(start_rate)
-        return HttpResponseRedirect(reverse('clients:subscribe_view', args=(id,)))
+        return HttpResponseRedirect(reverse('clients:subscribe_view', args=(id,bankID,)))
 
     context = {
         'subscriber': subscriber,
@@ -273,51 +269,3 @@ def SubscribesView(request, id):
     }
 
     return render(request, "clients/subscribe.html", context)
-
-# https://stackoverflow.com/questions/569468/django-multiple-models-in-one-template-using-forms
-# class PrimaryForm(ModelForm):
-#     class Meta:
-#         model = Primary
-#
-#
-# class BForm(ModelForm):
-#     class Meta:
-#         model = B
-#         exclude = ('primary',)
-#
-#
-# class CForm(ModelForm):
-#     class Meta:
-#         model = C
-#         exclude = ('primary',)
-#
-#
-# def generateView(request):
-#     if request.method == 'POST':  # If the form has been submitted...
-#         primary_form = PrimaryForm(request.POST, prefix="primary")
-#         b_form = BForm(request.POST, prefix="b")
-#         c_form = CForm(request.POST, prefix="c")
-#         if primary_form.is_valid() and b_form.is_valid() and c_form.is_valid():  # All validation rules pass
-#             print
-#             "all validation passed"
-#             primary = primary_form.save()
-#             b_form.cleaned_data["primary"] = primary
-#             b = b_form.save()
-#             c_form.cleaned_data["primary"] = primary
-#             c = c_form.save()
-#             return HttpResponseRedirect("/viewer/%s/" % (primary.name))
-#         else:
-#             print
-#             "failed"
-#
-#     else:
-#         primary_form = PrimaryForm(prefix="primary")
-#         b_form = BForm(prefix="b")
-#         c_form = Form(prefix="c")
-#
-#
-# return render_to_response('multi_model.html', {
-#     'primary_form': primary_form,
-#     'b_form': b_form,
-#     'c_form': c_form,
-# })

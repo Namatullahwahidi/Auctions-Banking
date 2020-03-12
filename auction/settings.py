@@ -84,6 +84,7 @@ DATABASES = {
         'OPTIONS': {
             'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
         },
+        'STORAGE_ENGINE': 'MyISAM / INNODB / ETC'
     }
 }
 #configuring django for Gmail SMTP server.

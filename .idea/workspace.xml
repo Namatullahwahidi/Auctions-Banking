@@ -2,119 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/auctionApp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/clients/20180429_132206.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/clients/index.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images1_w8FHwbO.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images2_ucPR4oa.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images_uPuW0eG.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/index.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/index_v32I1Tb.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/telegram.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctionApp/migrations/0002_auto_20200312_0852.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auction/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auction/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0002_auto_20200310_0015.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0003_auto_20200310_0113.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0004_auto_20200311_0600.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0005_auto_20200311_0849.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/0006_auto_20200311_0850.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/views/clients.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/image-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/Screenshot_from_2020-01-14_09-55-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/Screenshot_from_2020-01-25_20-21-58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/certificate.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/clients/20180429_132206.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/clients/20180429_132206_ZTUEekE.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/clients/Screenshot_from_2020-02-12_15-46-52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/clients/images.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/clients/images1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/clients/telegram2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_AUY5Z4A.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_HPiTru1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_N2D8hzP.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_OWZgwFp.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_SyHzQCs.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_tB4ZGQY.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_thGlO4s.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_wp4KmLz.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images1_yIvWu6J.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_CL7AeZ6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_Cdk0sQA.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_GkNTyEe.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_Gywg5Ps.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_IpooJjO.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_TDXci9X.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_U9KoZkc.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_ZDa5wQB.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_ZGEKVjg.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_cJs1VfT.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_fh8icaC.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images2_vepWjmb.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_5X3hikj.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_6WKYmB9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_JJkNW4I.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_KMlz5kT.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_MsHP7iL.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_TrMP5T4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_jZ5hp2l.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_mLhq4J8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/images_qLzaO0E.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_0omwk71.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_4YBJB0D.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_8y5hj9t.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_BtHvkig.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_IHoCWJJ.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_K7jJDnQ.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_LGCyPyP.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_LUaBo1p.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_N6zHFAM.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_Nzk04h5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_SyWizSH.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_cbrUQus.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/index_tI7mCoj.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamar1_M49ZTYz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamar_trans.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamar_trans_4D84NVM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamar_trans_VxMHatQ.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamar_trans_mhJ1H53.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamar_trans_vNEqV0U.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamaroiginal.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamaroiginal_SrpiUOB.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamaroiginal_X8qqhnq.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/lamaroiginal_yzVuYxZ.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/last.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/last_7p8FfER.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/last_SpaItH0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/last_UbzDaKf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/last_kfAK4uC.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/niyet2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/profile.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/profile_njh16LR.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/profile_u0GFYFI.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/recomend.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/recomend_VEcQ6Ni.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/recomend_neoS7w1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/referance.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/media/media/telegram.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/views/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctionApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctionApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctionApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctionApp/views/clients.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/views/clients.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctionApp/views/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/views/managers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clients/shared_clients.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/shared_clients.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clients/subscribe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/subscribe.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,17 +84,17 @@
     <property name="settings.editor.selected.configurable" value="editor.breadcrumbs" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/auctionApp" />
+      <recent name="$PROJECT_DIR$/auctionApp/forms" />
+      <recent name="$PROJECT_DIR$/managers/views" />
+      <recent name="$PROJECT_DIR$/managers/" />
+      <recent name="$PROJECT_DIR$/templates/clients" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/auctionApp" />
       <recent name="$PROJECT_DIR$/templates/clients" />
       <recent name="$PROJECT_DIR$/managers/media" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/managers/views" />
-      <recent name="$PROJECT_DIR$/managers/" />
-      <recent name="$PROJECT_DIR$/templates/clients" />
-      <recent name="$PROJECT_DIR$/templates/account" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.auction">
@@ -298,7 +206,9 @@
       <workItem from="1583389593894" duration="2487000" />
       <workItem from="1583392325194" duration="10572000" />
       <workItem from="1583816077565" duration="6693000" />
-      <workItem from="1583918645626" duration="11168000" />
+      <workItem from="1583918645626" duration="16137000" />
+      <workItem from="1583990010006" duration="3094000" />
+      <workItem from="1584006722521" duration="8274000" />
     </task>
     <servers />
   </component>
@@ -331,55 +241,55 @@
     </state>
     <state x="488" y="155" key="FileChooserDialogImpl/46.27.1320.741@46.27.1320.741" timestamp="1583816070839" />
     <state x="493" y="155" width="424" height="491" key="FileChooserDialogImpl/54.27.1312.741@54.27.1312.741" timestamp="1581704494516" />
-    <state width="1274" height="152" key="GridCell.Tab.0.bottom" timestamp="1583937582447">
+    <state width="1274" height="206" key="GridCell.Tab.0.bottom" timestamp="1583948376570">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.0.bottom/46.27.1320.741@46.27.1320.741" timestamp="1583937582447" />
+    <state width="1274" height="206" key="GridCell.Tab.0.bottom/46.27.1320.741@46.27.1320.741" timestamp="1583948376570" />
     <state width="1266" height="177" key="GridCell.Tab.0.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581956946968" />
-    <state width="1274" height="152" key="GridCell.Tab.0.center" timestamp="1583937582445">
+    <state width="1274" height="206" key="GridCell.Tab.0.center" timestamp="1583948376569">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.0.center/46.27.1320.741@46.27.1320.741" timestamp="1583937582445" />
+    <state width="1274" height="206" key="GridCell.Tab.0.center/46.27.1320.741@46.27.1320.741" timestamp="1583948376569" />
     <state width="1266" height="177" key="GridCell.Tab.0.center/54.27.1312.741@54.27.1312.741" timestamp="1581956946967" />
-    <state width="1274" height="152" key="GridCell.Tab.0.left" timestamp="1583937582444">
+    <state width="1274" height="206" key="GridCell.Tab.0.left" timestamp="1583948376568">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.0.left/46.27.1320.741@46.27.1320.741" timestamp="1583937582444" />
+    <state width="1274" height="206" key="GridCell.Tab.0.left/46.27.1320.741@46.27.1320.741" timestamp="1583948376568" />
     <state width="1266" height="177" key="GridCell.Tab.0.left/54.27.1312.741@54.27.1312.741" timestamp="1581956946966" />
-    <state width="1274" height="152" key="GridCell.Tab.0.right" timestamp="1583937582446">
+    <state width="1274" height="206" key="GridCell.Tab.0.right" timestamp="1583948376569">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.0.right/46.27.1320.741@46.27.1320.741" timestamp="1583937582446" />
+    <state width="1274" height="206" key="GridCell.Tab.0.right/46.27.1320.741@46.27.1320.741" timestamp="1583948376569" />
     <state width="1266" height="177" key="GridCell.Tab.0.right/54.27.1312.741@54.27.1312.741" timestamp="1581956946967" />
-    <state width="1274" height="152" key="GridCell.Tab.1.bottom" timestamp="1583937582449">
+    <state width="1274" height="152" key="GridCell.Tab.1.bottom" timestamp="1583948376564">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.1.bottom/46.27.1320.741@46.27.1320.741" timestamp="1583937582449" />
+    <state width="1274" height="152" key="GridCell.Tab.1.bottom/46.27.1320.741@46.27.1320.741" timestamp="1583948376564" />
     <state width="1266" height="177" key="GridCell.Tab.1.bottom/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
-    <state width="1274" height="152" key="GridCell.Tab.1.center" timestamp="1583937582448">
+    <state width="1274" height="152" key="GridCell.Tab.1.center" timestamp="1583948376563">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.1.center/46.27.1320.741@46.27.1320.741" timestamp="1583937582448" />
+    <state width="1274" height="152" key="GridCell.Tab.1.center/46.27.1320.741@46.27.1320.741" timestamp="1583948376563" />
     <state width="1266" height="177" key="GridCell.Tab.1.center/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
-    <state width="1274" height="152" key="GridCell.Tab.1.left" timestamp="1583937582447">
+    <state width="1274" height="152" key="GridCell.Tab.1.left" timestamp="1583948376563">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.1.left/46.27.1320.741@46.27.1320.741" timestamp="1583937582447" />
+    <state width="1274" height="152" key="GridCell.Tab.1.left/46.27.1320.741@46.27.1320.741" timestamp="1583948376563" />
     <state width="1266" height="177" key="GridCell.Tab.1.left/54.27.1312.741@54.27.1312.741" timestamp="1581956946968" />
-    <state width="1274" height="152" key="GridCell.Tab.1.right" timestamp="1583937582448">
+    <state width="1274" height="152" key="GridCell.Tab.1.right" timestamp="1583948376564">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state width="1274" height="152" key="GridCell.Tab.1.right/46.27.1320.741@46.27.1320.741" timestamp="1583937582448" />
+    <state width="1274" height="152" key="GridCell.Tab.1.right/46.27.1320.741@46.27.1320.741" timestamp="1583948376564" />
     <state width="1266" height="177" key="GridCell.Tab.1.right/54.27.1312.741@54.27.1312.741" timestamp="1581956946969" />
     <state x="192" y="27" width="1135" height="741" key="SettingsEditor" timestamp="1582720865075">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state x="192" y="27" width="1135" height="741" key="SettingsEditor/46.27.1320.741@46.27.1320.741" timestamp="1582720865075" />
     <state x="199" y="31" width="1022" height="737" key="SettingsEditor/54.27.1312.741@54.27.1312.741" timestamp="1581830982475" />
-    <state x="357" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1583918645418">
+    <state x="357" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog" timestamp="1584006722635">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state x="357" y="306" key="com.intellij.ide.util.TipDialog/46.27.1320.741@46.27.1320.741" timestamp="1583918645418" />
+    <state x="357" y="306" key="com.intellij.ide.util.TipDialog/46.27.1320.741@46.27.1320.741" timestamp="1584006722635" />
     <state x="363" y="306" width="993" height="345" key="com.intellij.ide.util.TipDialog/54.27.1312.741@54.27.1312.741" timestamp="1582541696090" />
     <state x="478" y="317" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582177395464">
       <screen x="54" y="27" width="1312" height="741" />
@@ -393,10 +303,10 @@
       <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state x="296" y="62" width="800" height="684" key="scopes/46.27.1320.741@46.27.1320.741" timestamp="1582918017404" />
-    <state x="444" y="99" width="677" height="678" key="search.everywhere.popup" timestamp="1582991694963">
+    <state x="444" y="99" width="677" height="678" key="search.everywhere.popup" timestamp="1583942271516">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state x="444" y="99" width="677" height="678" key="search.everywhere.popup/46.27.1320.741@46.27.1320.741" timestamp="1582991694963" />
+    <state x="444" y="99" width="677" height="678" key="search.everywhere.popup/46.27.1320.741@46.27.1320.741" timestamp="1583942271516" />
     <state x="450" y="99" width="672" height="678" key="search.everywhere.popup/54.27.1312.741@54.27.1312.741" timestamp="1582385159372" />
   </component>
 </project>

@@ -35,7 +35,7 @@ urlpatterns = [
           path('view_a_client/<int:id>/', clients.view_aClient, name="view_a_client"),
           path('accept_client/<int:id>/', clients.accept_client, name="accept_client"),
           path('shared/clients/view/', clients.shared_clients_view, name="shared_clients_view"),
-          path('subscribe/view/<int:id>/', clients.SubscribesView, name="subscribe_view"),
+          path('subscribe/view/<int:id>/<int:bankID>/', clients.SubscribesView, name="subscribe_view"),
           path('login_password/<int:id>/', clients.set_login_password, name="login_password"),
           url(r'^list_applied_clients/$', List_AppliedClients.as_view(),
               name='list_applied_clients'),

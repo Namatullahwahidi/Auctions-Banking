@@ -10,7 +10,7 @@ from django.core.exceptions import ValidationError
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.contrib.auth.forms import UserCreationForm
-from .models import Register
+from auctionApp.models import Register
 from auctionApp.models import Bank, FeedFile
 from auctionApp.models import BasicInformation, Business, AcceptClient, \
     Works, Credit_line, Collateral, Guarantee, Credit_History, Subscribe
@@ -46,6 +46,20 @@ class BankRegisterForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Save bank'))
+
+    def clean_username(self):
+        username = self.cleaned_data['username'].lower()
+        r = Register.objects.filter(username=username)
+        if r.count():
+            raise ValidationError("Username already exists")
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data['email'].lower()
+        e = Register.objects.filter(email=email)
+        if e.count():
+            raise ValidationError("Email already exists")
+        return email
 
 
 # class BankRegisterForm(forms.ModelForm):
@@ -220,7 +234,6 @@ class Credit_HistoryForm(forms.ModelForm):
             'maturity_date',
             'rate',
             'currency_unit',
-
         ]
 
 
@@ -232,7 +245,6 @@ class AcceptClientForm(forms.ModelForm):
             'expire_date',
             'start_rate',
         ]
-
 
 class SubscribeForm(forms.ModelForm):
     class Meta:

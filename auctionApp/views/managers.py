@@ -1,14 +1,5 @@
-from abc import ABC
+from django.shortcuts import render, redirect
 
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib import messages
-from django.utils import timezone
-from django.http import HttpResponse
-from django.contrib.auth.models import User
-from django.views import View
-
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from auctionApp.models import Register
 from auctionApp.forms import BankRegisterForm
 from auctionApp.models import Bank, FeedFile
@@ -42,15 +33,16 @@ def BankRegister(request):
         newBank.currentBalance = form.cleaned_data.get('currentBalance')
         newBank.save()
         username = form.cleaned_data.get('username')
+        email=form.cleaned_data.get('email')
         password = form.cleaned_data.get('password')
-        user = Register.objects.create(username=username, password=password)
+        user = Register.objects.create(username=username, password=password,email=email,is_bank=True)
         user.save()
         print(request.FILES.getlist('documents'))
         for f in request.FILES.getlist('documents'):
             file_instance = FeedFile(documents=f, feed=newBank)
             file_instance.save()
         context = {'bank': newBank, 'form': form}
-        return render(request, 'account/bank.html', context)
+        return redirect('managers:manager')
     context = {'form': form}
     return render(request, 'account/bank.html', context)
 
