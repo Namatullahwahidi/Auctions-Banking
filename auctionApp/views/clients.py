@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, TemplateView
 from django.contrib.auth.base_user import BaseUserManager
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -237,35 +237,46 @@ def shared_clients_view(request):
     return render(request, 'clients/shared_clients.html', context)
 
 
-def SubscribesView(request, id, bankID):
-    accept_clients = get_object_or_404(AcceptClient, id=id)
-    form = SubscribeForm(request.POST or None)
-    subscriber = Subscribe.objects.all()
-    bank = get_object_or_404(Register, id=bankID)
-    client_rate = accept_clients.credit_line.contribution_amount
-    start_rate = accept_clients.start_rate
-    object1 = Subscribe.objects.values_list('rate')
-    min = object1.order_by('rate').first()
-    if min is not None:
-        start_rate = min[0]
-    # rate = Subscribe.objects.all().aggregate(Min('rate')).get('rate')
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.accept_client = accept_clients
-        # print("instance type",type(instance.bank))
-        print("bank type",type(bank))
-        instance.bank = bank
-        selected_rate = request.POST['selected_rate']
-        instance.rate = selected_rate
-        instance.save()
-        return HttpResponseRedirect(reverse('clients:subscribe_view', args=(id,bankID,)))
+class SubscribesView(TemplateView):
+    template_name = 'clients/subscribe.html'
 
-    context = {
-        'subscriber': subscriber,
-        'accept_client': accept_client,
-        'form': form,
-        'client_rate': client_rate,
-        'start_rate': start_rate,
-    }
+    def get(self, request, *args, **kwargs):
+        form = SubscribeForm(request.POST or None)
+        subscriber = Subscribe.objects.all()
+        accept_client = AcceptClient.objects.get(id=self.kwargs['id'])
+        start_rate = accept_client.start_rate
+        object1 = Subscribe.objects.values_list('rate')
+        min = object1.order_by('rate').first()
+        if min is not None:
+            start_rate = min[0]
+        args = {
+            'form': form,
+            'subscriber': subscriber,
+            'accept_client': accept_client,
+            'start_rate': start_rate,
+        }
+        return render(request, self.template_name, args)
 
-    return render(request, "clients/subscribe.html", context)
+    def post(self, request, *args, **kwargs):
+        form = SubscribeForm(request.POST or None)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.accept_client = AcceptClient.objects.get(id=self.kwargs['id'])
+            instance.bank = Register.objects.get(id=self.kwargs['bankID'])
+            selected_rate = request.POST['selected_rate']
+            instance.rate = selected_rate
+            instance.save()
+            subscriber = Subscribe.objects.all()
+            start_rate = instance.accept_client.start_rate
+            object1 = Subscribe.objects.values_list('rate')
+            min = object1.order_by('rate').first()
+            if min is not None:
+                start_rate = min[0]
+
+        args = {
+            'form': form,
+            'subscriber': subscriber,
+            'accept_client': instance.accept_client,
+            'start_rate': start_rate,
+        }
+        return render(request, self.template_name, args)

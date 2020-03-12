@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7bba710-65de-46be-9342-f64f42882ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/clients/20180429_132206.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/clients/index.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images1_w8FHwbO.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images2_ucPR4oa.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/images_uPuW0eG.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/index.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/index_v32I1Tb.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/media/media/telegram.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctionApp/migrations/0002_auto_20200312_0852.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auction/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctionApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctionApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctionApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctionApp/views/clients.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/views/clients.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctionApp/views/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctionApp/views/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clients/shared_clients.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/shared_clients.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/clients/subscribe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clients/subscribe.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +191,7 @@
       <workItem from="1583816077565" duration="6693000" />
       <workItem from="1583918645626" duration="16137000" />
       <workItem from="1583990010006" duration="3094000" />
-      <workItem from="1584006722521" duration="8274000" />
+      <workItem from="1584006722521" duration="15063000" />
     </task>
     <servers />
   </component>
